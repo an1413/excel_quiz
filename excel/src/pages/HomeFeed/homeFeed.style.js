@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const LevelContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 `
 
@@ -13,7 +15,8 @@ export const LevelName = styled.div`
 
 `
 
-export const LevelButton = styled.div`
+export const LevelButton = styled.button`
+
 `
 
 export const Img = styled.img`
