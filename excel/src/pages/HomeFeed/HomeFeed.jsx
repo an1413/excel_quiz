@@ -5,8 +5,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Newbie from "../../img/newbie3.png"
 import Intern from "../../img/promotion3.png";
 import Expert from "../../img/rating3.png";
+import { useNavigate } from "react-router-dom";
 
 export default function HomeFeed() {
+  const navigate = useNavigate();
+
+  const linkNewbie = () => {
+    navigate("/beginner");
+  }
+
+  const linkIntern = () => {
+    navigate("/intern");
+  }
+
+  const linkExpert = () => {
+    navigate("/expert");
+  }
+  
+
+
   return (
     <>
       <Header/>
@@ -23,7 +40,7 @@ export default function HomeFeed() {
               />
             </LevelImg>
             <LevelName>초급</LevelName>
-            <LevelButton>
+            <LevelButton onClick={linkNewbie}>
               입장하기
             </LevelButton>
           </LevelContainer>
@@ -39,7 +56,7 @@ export default function HomeFeed() {
               />
             </LevelImg>
             <LevelName>중급</LevelName>
-            <LevelButton>
+            <LevelButton onClick={linkIntern}>
               입장하기
             </LevelButton>
           </LevelContainer>
@@ -55,7 +72,7 @@ export default function HomeFeed() {
               />
             </LevelImg>
             <LevelName>고급</LevelName>
-            <LevelButton>
+            <LevelButton onClick={linkExpert}>
               입장하기
             </LevelButton>
           </LevelContainer>
