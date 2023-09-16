@@ -21,6 +21,10 @@ export default function HomeFeed() {
   const linkExpert = () => {
     navigate("/expert");
   }
+
+  const linkTest = () => {
+    navigate("/test");
+  }
   
 
 
@@ -73,6 +77,21 @@ export default function HomeFeed() {
             </LevelImg>
             <LevelName>고급</LevelName>
             <LevelButton onClick={linkExpert}>
+              입장하기
+            </LevelButton>
+          </LevelContainer>
+          <LevelContainer className='col col-md-4 col-lg-4'>
+            <LevelImg>
+              <Img
+                aria-label="채팅방 이동버튼"
+                src={
+                  Expert
+                }
+                alt="뉴비"
+              />
+            </LevelImg>
+            <LevelName>시험보기</LevelName>
+            <LevelButton onClick={linkTest}>
               입장하기
             </LevelButton>
           </LevelContainer>
