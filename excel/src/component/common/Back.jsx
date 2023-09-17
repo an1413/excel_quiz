@@ -1,9 +1,13 @@
 import React from 'react'
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export default function Back() {
+  const navigate = useNavigate();
+
+
   return (
-    <BackButton>Back</BackButton>
+    <BackButton onClick={() => navigate(-1)}>Back</BackButton>
   )
 }
 
