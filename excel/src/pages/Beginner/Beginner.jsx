@@ -40,7 +40,7 @@ export default function Beginner() {
   }
 
   const Beginner_Success = () => {
-    if(stage_beginner === 10) {
+    if(stage_beginner === 21) {
       console.log("종료");
     }
   }
