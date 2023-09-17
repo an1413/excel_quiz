@@ -1,7 +1,80 @@
-import React from 'react'
+import React, { useState } from 'react'
+import HomeButton from '../../component/common/HomeButton';
+import Back from '../../component/common/Back';
+import styled from "styled-components";
+import dummy from "../../db/intern.json";
 
 export default function Intern() {
+  const [stage_intern, setStage_intern] = useState(1);
+  const [inputValue, setInputValue] = useState("");
+  const intern_question = dummy[stage_intern - 1].question;
+  const intern_answer = dummy[stage_intern - 1].answer.toString();
+
+  const intern_sheet_photo = require(`../../img/sheet_photo/2-answer-${stage_intern}.png`);
+  const handleButton = () => {
+    console.log("g");
+    intern_Success();
+    if (inputValue === intern_answer) {
+      // 정답과 입력값이 일치하면 스테이지를 업데이트
+      alert("정답입니다. 다음단계로 넘어가시겠습니까?");
+      setStage_intern(stage_intern + 1);
+      setInputValue(""); // 입력값 초기화
+    }
+    else {
+      alert("다시한번 풀어주세요.")
+      console.log(typeof inputValue);
+      console.log(typeof intern_answer);
+      console.log("wrong");
+      setInputValue("");
+    }
+  }
+
+  const intern_Success = () => {
+    if(stage_intern === 21) {
+      console.log("종료");
+    }
+  }
+
   return (
-    <div>Intern</div>
+    <internWrapper>
+      <Back />
+      <h1>Intern {stage_intern}번 문제</h1>
+      <HomeButton />
+      <p>{intern_question}</p>
+      <form action="">
+        <input
+          type="text"
+          required
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
+        />
+        <button type='button' onClick={handleButton}>정답입력</button>
+      </form>
+      <internAnswer>정답출력: {intern_answer}</internAnswer>
+      {/* <div>힌트화면: {intern_sheet_photo}</div> */}
+      <internHint>힌트화면 <HintImage src={intern_sheet_photo} alt="힌트 이미지" /></internHint>
+      intern
+    </internWrapper>
   )
 }
+
+const internWrapper = styled.div`
+  text-align: center;
+`
+
+const internAnswer = styled.div`
+  font-size: 2rem;
+`
+
+const internHint = styled.div`
+  display:flex;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+`
+
+const HintImage = styled.img`
+  text-align: center;
+  width: 300px;
+  height: 300px;
+`
