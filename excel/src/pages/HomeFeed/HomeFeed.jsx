@@ -33,7 +33,7 @@ export default function HomeFeed() {
       <Header/>
       <div className='container'>
         <div className='row'>
-          <LevelContainer className='col col-md-4 col-lg-4'>
+          <LevelContainer className='col col-md-3 col-lg-3'>
             <LevelImg>
               <Img
                 aria-label="채팅방 이동버튼"
@@ -49,7 +49,7 @@ export default function HomeFeed() {
             </LevelButton>
           </LevelContainer>
 
-          <LevelContainer className='col col-md-4 col-lg-4'>
+          <LevelContainer className='col col-md-3 col-lg-3'>
             <LevelImg>
               <Img
                 aria-label="채팅방 이동버튼"
@@ -65,7 +65,7 @@ export default function HomeFeed() {
             </LevelButton>
           </LevelContainer>
 
-          <LevelContainer className='col col-md-4 col-lg-4'>
+          <LevelContainer className='col col-md-3 col-lg-3'>
             <LevelImg>
               <Img
                 aria-label="채팅방 이동버튼"
@@ -80,7 +80,7 @@ export default function HomeFeed() {
               입장하기
             </LevelButton>
           </LevelContainer>
-          <LevelContainer className='col col-md-4 col-lg-4'>
+          <LevelContainer className='col col-md-3 col-lg-3'>
             <LevelImg>
               <Img
                 aria-label="채팅방 이동버튼"
