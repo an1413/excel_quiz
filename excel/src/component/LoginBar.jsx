@@ -1,11 +1,22 @@
 import React from 'react'
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginBar() {
+  const navigate = useNavigate();
+
+  const linkLogin = () => {
+    navigate("/login");
+  }
+
+  const linkSignup = () => {
+    navigate("/signup");
+  }
+
   return (
     <LoginBarWrapper>
-        <LoginBarButton>로그인</LoginBarButton>
-        <LoginBarButton>회원가입</LoginBarButton>
+        <LoginBarButton onClick={linkLogin}>로그인</LoginBarButton>
+        <LoginBarButton onClick={linkSignup}>회원가입</LoginBarButton>
     </LoginBarWrapper>
   )
 }
