@@ -13,6 +13,8 @@ const HeaderTitle = styled.h1`
   margin-top: 50px;
   font-family: 'Nunito';
   font-size: 85px;
+  font-weight: 700;
+  margin-bottom: 2rem;
 `
 
 
