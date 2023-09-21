@@ -3,6 +3,11 @@ import HomeButton from '../../component/common/HomeButton';
 import Back from '../../component/common/Back';
 import styled from 'styled-components';
 import dummy from '../../db/intern.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Spreadsheet from "../../component/Spreadsheet";
 
 export default function Intern() {
   const [stage_intern, setStage_intern] = useState(1);
@@ -32,7 +37,7 @@ export default function Intern() {
   const handleButton = () => {
     console.log('g');
     intern_Success();
-    if (inputValue === intern_answer) {
+    if (inputValue.replace(/\s+/g, '') === intern_answer) {
       // 정답과 입력값이 일치하면 스테이지를 업데이트
       alert('정답입니다. 다음단계로 넘어가시겠습니까?');
       setStage_intern(stage_intern + 1);
@@ -54,7 +59,18 @@ export default function Intern() {
 
   return (
     <internWrapper>
-      <Back />
+    <Container>
+      <Row>
+        <Col>
+        <Back />
+        <internQuestion>
+        </internQuestion>
+        </Col>
+        <Col>2 of 2</Col>
+      </Row>
+      <Spreadsheet/>
+    </Container>
+      {/* <Back />
       <h1>Intern {stage_intern}번 문제</h1>
       <HomeButton />
       <p>{intern_question}</p>
@@ -69,18 +85,28 @@ export default function Intern() {
           정답입력
         </button>
       </form>
-      <internAnswer>정답출력: {intern_answer}</internAnswer>
+      <internAnswer>정답출력: {intern_answer}</internAnswer> */}
       {/* <div>힌트화면: {intern_sheet_photo}</div> */}
-      <internHint>
+      {/* <internHint>
         힌트화면 <HintImage src={intern_sheet_photo} alt="힌트 이미지" />
       </internHint>
-      intern
+      intern */}
     </internWrapper>
   );
 }
 
-const internWrapper = styled.div`
-  text-align: center;
+export const internWrapper = styled.div`
+  /* text-align: center; */
+`;
+
+export const internQuestion = styled.div`
+  /* margin-top: 2rem; */
+  width: 140px;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const internAnswer = styled.div`
