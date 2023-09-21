@@ -17,6 +17,7 @@ import Login from '../pages/Login/Login';
 // import Signup from '../pages/Signup/Signup';
 import UserAccount from '../pages/Signup/userAccount/UserAccount';
 import ProfileSettingUI from '../pages/Signup/profileSetting/ProfileSetting.presenter';
+// import Navbar from '../component/Navbar';
 
 export default function Router() {
   return (
