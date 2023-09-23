@@ -12,6 +12,7 @@ export default function Back() {
 }
 
 const BackButton = styled.button`
-  width: 24px;
+  width: 62px;
   height: 24px;
+  border-radius: 4px;
 `
