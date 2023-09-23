@@ -29,7 +29,6 @@ export default function HomeFeed() {
   
   return (
     <>
-    <CollapsibleExample/>
       <Header/>
       <div className='container'>
         <div className='row'>
