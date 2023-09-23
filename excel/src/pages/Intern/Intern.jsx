@@ -8,6 +8,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spreadsheet from "../../component/Spreadsheet";
+import { InternWrapper, QuestionDiv, InternAnswer, InternHint, HintImage, QuestionH1, QuestionP, AnswerInput, AnswerButton, InternHintStrong } from './intern.style';
+
 
 export default function Intern() {
   const [stage_intern, setStage_intern] = useState(1);
@@ -58,18 +60,43 @@ export default function Intern() {
   };
 
   return (
-    <internWrapper>
-    <Container>
-      <Row>
-        <Col>
-        <Back />
-        <internQuestion>
-        </internQuestion>
-        </Col>
-        <Col>2 of 2</Col>
-      </Row>
-      <Spreadsheet/>
-    </Container>
+    
+    <InternWrapper>
+      <div className='container'>
+        <div className='row'>
+          <QuestionDiv className='col col-sm-12 col-md-12 col-lg-6'>
+            <Back />
+            <QuestionH1>Intern {stage_intern}번 문제</QuestionH1>
+            <QuestionP>{intern_question}</QuestionP>
+            <form action="">
+              <AnswerInput
+              type="text"
+              required
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
+            />
+            <AnswerButton type="button" onClick={handleButton}>
+              정답입력
+            </AnswerButton>
+            </form>
+          </QuestionDiv>
+          <div className='col col-sm-12 col-md-6 col-lg-6'>
+            <div>
+            <InternAnswer>
+              정답출력: {intern_answer}
+            </InternAnswer>
+            </div>
+            <br></br>
+            <internHint>
+              <InternHintStrong>
+                힌트화면
+              </InternHintStrong>
+              <br></br>
+              <HintImage src={intern_sheet_photo} alt="힌트 이미지" />
+            </internHint>
+          </div>
+        </div>
+      </div>
       {/* <Back />
       <h1>Intern {stage_intern}번 문제</h1>
       <HomeButton />
@@ -91,37 +118,8 @@ export default function Intern() {
         힌트화면 <HintImage src={intern_sheet_photo} alt="힌트 이미지" />
       </internHint>
       intern */}
-    </internWrapper>
+    </InternWrapper>
   );
 }
 
-export const internWrapper = styled.div`
-  /* text-align: center; */
-`;
 
-export const internQuestion = styled.div`
-  /* margin-top: 2rem; */
-  width: 140px;
-  background-color: #ddd;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const internAnswer = styled.div`
-  font-size: 2rem;
-`;
-
-const internHint = styled.div`
-  display: flex;
-  align-items: center;
-  width: 300px;
-  height: 300px;
-`;
-
-const HintImage = styled.img`
-  text-align: center;
-  width: 300px;
-  height: 300px;
-`;
