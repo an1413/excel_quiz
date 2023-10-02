@@ -13,10 +13,10 @@ import Beginner from "../pages/Beginner/Beginner";
 import Intern from "../pages/Intern/Intern";
 import Completion from '../pages/Completion/Completion';
 import TestRandom from '../pages/TestRandom/TestRandom';
-import Login from '../pages/Login/Login';
 // import Signup from '../pages/Signup/Signup';
 import UserAccount from '../pages/Signup/userAccount/UserAccount';
 import ProfileSettingUI from '../pages/Signup/profileSetting/ProfileSetting.presenter';
+import LoginPresenter from '../pages/Login/login.presenter';
 // import Navbar from '../component/Navbar';
 
 export default function Router() {
@@ -24,7 +24,7 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeFeed/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/login' element={<LoginPresenter/>}/>
         
         <Route path='/signup/*' element={<Outlet/>}>
           <Route path='' element={<UserAccount/>}/>
