@@ -33,6 +33,10 @@ export const AnswerButton = styled.button`
   width: 4.7rem;
   height: 40px;
   border-radius: 4px;
+  &:hover {
+    background-color: #05742a;
+    color: #fff;
+  }
 `;
 
 export const InternAnswer = styled.div`
