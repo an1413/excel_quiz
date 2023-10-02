@@ -65,6 +65,27 @@ export default function Intern() {
       setInputValue('');
     }
   };
+  const handleFormSubmit = (e) => {
+  e.preventDefault(); // 폼 기본 제출 동작 막기
+
+  if (inputValue.replace(/\s+/g, '') === intern_answer) {
+    if (stage_intern === 20) {
+      Swal.fire({
+        title: "중급문제풀이가 끝났습니다\n홈화면으로 이동합니다",
+        icon: 'success',
+        timer: 2500,
+      })
+      linkFeed();
+    } else {
+      Swal.fire("잘하셨어요! 정답입니다.")
+      setStage_intern(stage_intern + 1);
+      setInputValue(''); // 입력값 초기화
+    }
+  } else {
+    alert('다시한번 풀어주세요.');
+    setInputValue('');
+  }
+};
 
   const intern_Success = () => {
     if (stage_intern === 20) {
@@ -89,17 +110,17 @@ export default function Intern() {
             </ButtonWrapper>
             <QuestionH1>Intern {stage_intern}번 문제</QuestionH1>
             <QuestionP>{intern_question}</QuestionP>
-            <AnswerForm action="">
+            <AnswerForm onSubmit={handleFormSubmit}>
               <AnswerInput
               type="text"
               required
               placeholder='여기에 정답을 입력해주세요.'
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
-            />
-            <AnswerButton type="button" onClick={handleButton}>
-              정답입력
-            </AnswerButton>
+              />
+              <AnswerButton type="button" onClick={handleButton}>
+                정답입력
+              </AnswerButton>
             </AnswerForm>
           </QuestionDiv>
           <div className='col col-sm-12 col-md-6 col-lg-6'>
