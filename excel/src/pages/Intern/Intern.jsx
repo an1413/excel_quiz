@@ -4,19 +4,22 @@ import Back from '../../component/common/Back';
 import styled from 'styled-components';
 import dummy from '../../db/intern.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Spreadsheet from "../../component/Spreadsheet";
-import { InternWrapper, QuestionDiv, InternAnswer, InternHint, HintImage, QuestionH1, QuestionP, AnswerInput, AnswerButton, InternHintStrong } from './intern.style';
-
+import { InternWrapper, QuestionDiv, InternAnswer, InternHint, HintImage, QuestionH1, QuestionP, AnswerInput, AnswerButton, InternHintStrong, ButtonWrapper, AnswerForm } from './intern.style';
+import Reset from '../../component/common/Reset';
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function Intern() {
+  const navigate = useNavigate();
   const [stage_intern, setStage_intern] = useState(1);
   const [inputValue, setInputValue] = useState('');
   const intern_question = dummy[stage_intern - 1].question;
   const intern_answer = dummy[stage_intern - 1].answer.toString();
   const intern_sheet_photo = require(`../../img/sheet_photo/2-answer-${stage_intern}.png`);
+
+  const linkFeed = () => {
+    navigate("/");
+  }
 
   // stage_intern 값을 로컬 스토리지에 저장하는 함수
   const saveStageInternToLocalStorage = (value) => {
@@ -38,12 +41,22 @@ export default function Intern() {
 
   const handleButton = () => {
     console.log('g');
-    intern_Success();
+    // intern_Success();
     if (inputValue.replace(/\s+/g, '') === intern_answer) {
       // 정답과 입력값이 일치하면 스테이지를 업데이트
-      alert('정답입니다. 다음단계로 넘어가시겠습니까?');
-      setStage_intern(stage_intern + 1);
-      setInputValue(''); // 입력값 초기화
+      if(stage_intern === 20) {
+        Swal.fire({
+        title: "중급문제풀이가 끝났습니다\n홈화면으로 이동합니다",
+        icon: 'success',
+        timer: 2500,
+      })
+      linkFeed();
+      }
+      else {
+        Swal.fire("잘하셨어요! 정답입니다.")
+        setStage_intern(stage_intern + 1);
+        setInputValue(''); // 입력값 초기화
+      }
     } else {
       alert('다시한번 풀어주세요.');
       console.log(typeof inputValue);
@@ -54,46 +67,55 @@ export default function Intern() {
   };
 
   const intern_Success = () => {
-    if (stage_intern === 21) {
-      console.log('종료');
+    if (stage_intern === 20) {
+      Swal.fire({
+        title: '중급문제풀이가 끝났습니다. 수고하셨습니다!',
+        icon: 'success',
+        timer: 1500,
+      })
+      linkFeed();
+      return;
     }
   };
 
   return (
-    
     <InternWrapper>
       <div className='container'>
         <div className='row'>
           <QuestionDiv className='col col-sm-12 col-md-12 col-lg-6'>
-            <Back />
+            <ButtonWrapper>
+              <Back />
+              <Reset/>
+            </ButtonWrapper>
             <QuestionH1>Intern {stage_intern}번 문제</QuestionH1>
             <QuestionP>{intern_question}</QuestionP>
-            <form action="">
+            <AnswerForm action="">
               <AnswerInput
               type="text"
               required
+              placeholder='여기에 정답을 입력해주세요.'
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
             />
             <AnswerButton type="button" onClick={handleButton}>
               정답입력
             </AnswerButton>
-            </form>
+            </AnswerForm>
           </QuestionDiv>
           <div className='col col-sm-12 col-md-6 col-lg-6'>
             <div>
             <InternAnswer>
-              정답출력: {intern_answer}
+              {intern_answer}
             </InternAnswer>
             </div>
             <br></br>
-            <internHint>
+            <InternHint>
               <InternHintStrong>
-                힌트화면
+                참고화면
               </InternHintStrong>
               <br></br>
               <HintImage src={intern_sheet_photo} alt="힌트 이미지" />
-            </internHint>
+            </InternHint>
           </div>
         </div>
       </div>
