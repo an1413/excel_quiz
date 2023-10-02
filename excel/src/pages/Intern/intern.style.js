@@ -18,14 +18,19 @@ export const QuestionP = styled.p`
   text-align: left;
 `;
 
+export const AnswerForm = styled.form`
+  /* display: flex; */
+  text-align: left;
+`
+
 export const AnswerInput = styled.input`
-  width: 300px;
+  width: 80%;
   height: 80px;
   margin-right: 2rem;
 `;
 
 export const AnswerButton = styled.button`
-  width: 78px;
+  width: 4.7rem;
   height: 40px;
   border-radius: 4px;
 `;
@@ -33,12 +38,12 @@ export const AnswerButton = styled.button`
 export const InternAnswer = styled.div`
   font-size: 2rem;
   background-color: #ddd;
-  margin-bottom: 2px;
+  /* margin-bottom: 2px; */
 `;
 
 export const InternHintStrong = styled.div`
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  /* margin-bottom: 1rem; */
 `
 
 export const InternHint = styled.div`
@@ -54,3 +59,8 @@ export const HintImage = styled.img`
   width: 300px;
   height: 300px;
 `;
+
+export const ButtonWrapper = styled.div`
+  display:flex;
+  gap: 1rem;
+`
