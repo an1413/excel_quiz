@@ -4,6 +4,7 @@ import DataInput from "../../../component/common/DataInput";
 import { useNavigate } from "react-router-dom";
 import ErrorMessage from "../../../component/common/ErrorMessage";
 import { emailValidationAPI } from "../../../API/validationAPI";
+import Swal from "sweetalert2";
 import {
   SignupContainer,
   SignupForm,
@@ -81,7 +82,12 @@ export default function UserAccount() {
   const navigate = useNavigate();
   const onClickNextPage = () => {
     if (isFormValid) {
-      navigate("/signup/profileSetting", { state: { email, password } });
+      Swal.fire({
+        title: "회원가입이 완료되었습니다\n\n로그인 해주세요",
+        icon: 'success',
+        timer: 2500,
+      })
+      navigate("/", { state: { email, password } });
     }
   };
 
@@ -97,7 +103,7 @@ export default function UserAccount() {
   return (
     <SignupContainer>
       <SignupForm>
-        <Title>이메일로 회원가입</Title>
+        <Title>회원가입</Title>
         <UserInput inputId="registeremail" label="이메일">
           <DataInput
             type="email"
@@ -130,7 +136,7 @@ export default function UserAccount() {
           onClick={handleSubmit}
           aria-label = "다음 버튼"
         >
-          다음
+          회원가입하기
         </SignupButton>
       </SignupForm>
     </SignupContainer>
