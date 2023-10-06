@@ -1,14 +1,129 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>React App</title>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <script type="text/javascript" src="./spreadsheet.js"></script>
+    <link rel="stylesheet" href="./spreadsheet.css">
+  </head>
 
-<body>
-  <div id="root"></div>
-</body>
+  <body>
+    <div id="root">
+      <!-- 라우터로 표시할 영역 -->
+      <div id="content"></div>
+    </div>
+
+    <!-- /intern 경로로 이동할 때만 스프레드시트를 나타낼 div -->
+    <!-- <div id="spreadsheet" style="display: none; height: 400px; max-width: 70%; margin-top: 3rem;"></div> -->
+
+    <script src="./new.js"></script>
+
+    <!-- 기존 spreadsheet -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script> -->
+
+    <!-- 새로운 spreadsheet -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/css/pluginsCss.css' />
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/plugins.css' />
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/css/luckysheet.css' />
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/assets/iconfont/iconfont.css' />
+    <script src="https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/js/plugin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/luckysheet.umd.js"></script>
+    <script>var Alert = ReactBootstrap.Alert;</script>
+
+    <div id="luckysheet"
+      style="margin-left:0px;padding:0px;position:absolute;width:700px;height:450px;left: 160px;top: 450px;">
+    </div>
+
+    <script>
+      // URL 경로에 따라 스프레드시트를 나타낼 div를 표시/숨김 처리
+      if (window.location.pathname === '/intern') {
+        document.getElementById('luckysheet').style.display = 'block';
+      } else {
+        document.getElementById('luckysheet').style.display = 'none';
+      }
+    </script>
+
+    <script>
+      $(function () {
+        //Configuration item
+        var options = {
+          container: 'luckysheet' //luckysheet is the container id
+        }
+        luckysheet.create(options)
+      })
+
+      // 미디어 쿼리 함수를 정의합니다.
+      function adjustLuckysheetSize() {
+        // 현재 화면의 너비를 가져옵니다.
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+        // 화면 너비에 따라 스프레드시트 <div>의 높이와 위치를 조정합니다.
+        var luckysheetDiv = document.getElementById('luckysheet');
+        if (screenWidth > 1600) {
+          // 화면 너비가 1200px 초과인 경우: 기본 설정 유지
+          luckysheetDiv.style.height = '450px'; // 초기 높이로 복원
+          luckysheetDiv.style.left = '310px'; // 초기 위치로 복원
+          luckysheetDiv.style.top = '450px'; // 초기 위치로 복원
+        }
+        else if (screenWidth <= 1600 && screenWidth > 1400) {
+          // 화면 너비가 1200px 이하, 760px 초과인 경우
+          luckysheetDiv.style.height = '300px'; // 높이를 300px로 조정
+          luckysheetDiv.style.width = '500px'; // 초기 위치로 복원
+          luckysheetDiv.style.left = '100px'; // 위치를 변경
+          luckysheetDiv.style.top = '400px'; // 위치를 변경
+        }
+        else if (screenWidth <= 1400 && screenWidth > 1280) {
+          // 화면 너비가 1200px 이하, 760px 초과인 경우
+          luckysheetDiv.style.height = '300px'; // 높이를 300px로 조정
+          luckysheetDiv.style.width = '500px'; // 초기 위치로 복원
+          luckysheetDiv.style.left = '100px'; // 위치를 변경
+          luckysheetDiv.style.top = '400px'; // 위치를 변경
+        } else if (screenWidth <= 1280 && screenWidth > 1000) {
+          // 화면 너비가 760px 이하, 530px 초과인 경우
+          luckysheetDiv.style.height = '200px'; // 높이를 200px로 조정
+          luckysheetDiv.style.left = '20px'; // 위치를 변경
+          luckysheetDiv.style.top = '100px'; // 위치를 변경
+        }
+        else if (screenWidth <= 1000 && screenWidth > 800) {
+          // 화면 너비가 1200px 이하, 760px 초과인 경우
+          luckysheetDiv.style.height = '300px'; // 높이를 300px로 조정
+          luckysheetDiv.style.width = '500px'; // 초기 위치로 복원
+          luckysheetDiv.style.left = '100px'; // 위치를 변경
+          luckysheetDiv.style.top = '400px'; // 위치를 변경
+        }
+        else if (screenWidth <= 800 && screenWidth > 600) {
+          // 화면 너비가 1200px 이하, 760px 초과인 경우
+          luckysheetDiv.style.height = '300px'; // 높이를 300px로 조정
+          luckysheetDiv.style.width = '500px'; // 초기 위치로 복원
+          luckysheetDiv.style.left = '100px'; // 위치를 변경
+          luckysheetDiv.style.top = '400px'; // 위치를 변경
+        }
+        else if (screenWidth <= 600 && screenWidth > 400) {
+          // 화면 너비가 1200px 이하, 760px 초과인 경우
+          luckysheetDiv.style.height = '300px'; // 높이를 300px로 조정
+          luckysheetDiv.style.width = '500px'; // 초기 위치로 복원
+          luckysheetDiv.style.left = '100px'; // 위치를 변경
+          luckysheetDiv.style.top = '400px'; // 위치를 변경
+        } else {
+          // 화면 너비가 400px 이하인 경우
+          luckysheetDiv.style.height = '150px'; // 높이를 150px로 조정
+          luckysheetDiv.style.left = '10px'; // 위치를 변경
+          luckysheetDiv.style.top = '50px'; // 위치를 변경
+        }
+      }
+
+      // 페이지 로드 시와 윈도우 크기 변경 시 미디어 쿼리 함수를 호출합니다.
+      window.addEventListener('load', adjustLuckysheetSize);
+      window.addEventListener('resize', adjustLuckysheetSize);
+    </script>
+
+
+  </body>
 
 </html>
