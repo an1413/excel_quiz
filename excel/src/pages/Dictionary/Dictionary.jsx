@@ -1,30 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
-import Table from 'react-bootstrap/Table';
 import List from '../../component/common/List';
 import Search from '../../component/Search';
 
 export default function Dictionary() {
+
+  const [searchValue, setSearchValue] = useState('');
+
   return (
     <DictionaryWrapper>
-      <Search/>
-      <FunctionList>
-      <FunctionNameWrapper>
-        <FunctionName>
-          함수명
-        </FunctionName>
-      </FunctionNameWrapper>
-      <FunctionExplainWrapper>
-        <FunctionExplain>
-          함수설명
-        </FunctionExplain>
-      </FunctionExplainWrapper>
-
-    </FunctionList>
-      <List/>
-      <List/>
-      <List/>
+      {/* Search 컴포넌트에 검색어와 검색어 업데이트 함수를 전달합니다. */}
+      <Search setSearchValue={setSearchValue} />
+      {/* List 컴포넌트에 검색어를 전달합니다. */}
+      <List searchValue={searchValue} />
     </DictionaryWrapper>
   )
 }
