@@ -6,7 +6,6 @@ import Newbie from "../../img/newbie3.png"
 import Intern from "../../img/promotion3.png";
 import Expert from "../../img/rating3.png";
 import { useNavigate } from "react-router-dom";
-import CollapsibleExample from '../../component/CollapsibleExample';
 
 export default function HomeFeed() {
   const navigate = useNavigate();

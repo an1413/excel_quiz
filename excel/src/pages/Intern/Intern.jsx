@@ -126,7 +126,7 @@ export default function Intern() {
           <div className='col col-sm-12 col-md-6 col-lg-6'>
             <div>
             <InternAnswer>
-              {intern_answer}
+              {/* {intern_answer} */}
             </InternAnswer>
             </div>
             <br></br>
