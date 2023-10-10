@@ -13,6 +13,10 @@ export default function Back() {
 
 const BackButton = styled.button`
   width: 62px;
-  height: 24px;
   border-radius: 4px;
+  padding: 2px;
+  &:hover {
+    background-color: #05742a;
+    color: #fff;
+  }
 `

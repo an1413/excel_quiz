@@ -73,7 +73,7 @@ const Button = styled.button`
   &.ms:disabled,
   &.large:disabled,
   &.medium:disabled {
-    background-color: var(--color-sub);
+    background-color: #ddd;
   }
 `;
 
