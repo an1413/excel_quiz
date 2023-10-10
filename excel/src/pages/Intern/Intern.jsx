@@ -8,6 +8,7 @@ import { InternWrapper, QuestionDiv, InternAnswer, InternHint, HintImage, Questi
 import Reset from '../../component/common/Reset';
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import Hint from '../../component/common/Hint';
 
 export default function Intern() {
   const navigate = useNavigate();
@@ -107,6 +108,7 @@ export default function Intern() {
             <ButtonWrapper>
               <Back />
               <Reset/>
+              <Hint/>
             </ButtonWrapper>
             <QuestionH1>Intern {stage_intern}번 문제</QuestionH1>
             <QuestionP>{intern_question}</QuestionP>
