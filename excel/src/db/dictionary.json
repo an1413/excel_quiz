@@ -1,0 +1,27 @@
+[
+  {
+    "Func_Name": "=sum",
+    "Func_Explain": "인수들의 합을 구합니다",
+    "Func_ex": "sum(1,2,3)  결과: 6"
+  },
+  {
+    "Func_Name": "=ROUND(인수,자릿수)",
+    "Func_Explain": "인수를 자릿수로 반올림한 숫자를 구함",
+    "Func_ex": "ROUND(3.14156,2)            결과: 3.14"
+  },
+  {
+    "Func_Name": "=ROUND(인수,자릿수)",
+    "Func_Explain": "인수를 자릿수로 반올림한 숫자를 구함",
+    "Func_ex": "ROUND(3.14156,2)            결과: 3.14"
+  },
+  {
+    "Func_Name": "=ROUND(인수,자릿수)",
+    "Func_Explain": "인수를 자릿수로 반올림한 숫자를 구함",
+    "Func_ex": "ROUND(3.14156,2)            결과: 3.14"
+  },
+  {
+    "Func_Name": "=ROUND(인수,자릿수)",
+    "Func_Explain": "인수를 자릿수로 반올림한 숫자를 구함",
+    "Func_ex": "ROUND(3.14156,2)            결과: 3.14"
+  }
+]

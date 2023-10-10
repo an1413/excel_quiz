@@ -119,5 +119,5 @@
     "answer": "=ROUNDUP(SUMIF(A2:5,”힙합”,B2:B5)-3)",
     "sheet_photo": "1-answer-20"
   }
-
+  
 ]
