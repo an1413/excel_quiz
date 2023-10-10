@@ -6,7 +6,7 @@ import uploadfile from "../../../img/upload-file.svg";
 import uploadfileWebp from "../../../img/upload-file.webp";
 import resetClass from "./signupup";
 import "./signupup";
-import "./signup_in.css";
+
 import {
   ProfileContainer,
   ProfileForm,
