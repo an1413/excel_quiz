@@ -4,6 +4,9 @@ import DataInput from "../../../component/common/DataInput";
 import ErrorMessage from "../../../component/common/ErrorMessage";
 import uploadfile from "../../../img/upload-file.svg";
 import uploadfileWebp from "../../../img/upload-file.webp";
+import resetClass from "./signupup";
+import "./signupup";
+import "./signup_in.css";
 import {
   ProfileContainer,
   ProfileForm,
@@ -31,6 +34,22 @@ const ProfileSettingUI = ({
   handleSubmit,
   resolveWebp,
 }) => {
+  function resetClass(element, classname){
+    element.classList.remove(classname);
+  }
+  document.getElementsByClassName("show-signup")[0].addEventListener("click",function(){
+    let form = document.getElementsByClassName("form")[0];
+    resetClass(form, "signin");
+    form.classList.add("signup");
+    document.getElementById("submit-btn").innerText = "Sign Up";
+  });
+  document.getElementsByClassName("show-signin")[0].addEventListener("click",function(){
+    let form = document.getElementsByClassName("form")[0];
+    resetClass(form, "signup");
+    form.classList.add("signin");
+    document.getElementById("submit-btn").innerText = "Sign In";
+  });
+
   return (
     <ProfileContainer>
       <ProfileForm>
@@ -90,11 +109,12 @@ const ProfileSettingUI = ({
             nickNameErrorMsg === "이미 가입된 계정ID 입니다."
           }
           onClick={handleSubmit}
-          aria-label = "수수마켓 시작하기 버튼"
+          aria-label = "시작하기 버튼"
         >
-          수수마켓 시작하기
+          시작하기
         </ProfileButton>
       </ProfileForm>
+
     </ProfileContainer>
   );
 };
