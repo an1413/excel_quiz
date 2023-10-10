@@ -30,7 +30,7 @@ function App() {
     <>
     <GlobalStyle/>
     <CollapsibleExample/>
-     <div className="container">
+      <div className="container">
       <div className="row">
         {/* <div className="col col-md-4 col-lg-8"></div>
         <div className="col md-4 col-lg-4"></div>
