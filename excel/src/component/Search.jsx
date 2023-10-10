@@ -2,15 +2,24 @@ import React from 'react'
 import styled from 'styled-components';
 import iconSearch from "../img/icon-search.svg"
 
-export default function Search() {
+export default function Search({ setSearchValue }) {
+  const handleInputChange = (e) => {
+    // 검색어를 상위 컴포넌트로 전달합니다.
+    setSearchValue(e.target.value);
+  };
+
+
   return (
     <SearchWrap>
-   <SearchMain>
-      <SearchTerm placeholder="함수를 검색하세요" />
+    <SearchMain>
+      <SearchTerm
+          placeholder="함수를 검색하세요"
+          onChange={handleInputChange}
+        />
       <SearchButton type="submit">
         <SearchIcon src={iconSearch}/>
-     </SearchButton>
-   </SearchMain>
+      </SearchButton>
+    </SearchMain>
   </SearchWrap>
   )
 }
@@ -36,23 +45,23 @@ const SearchMain = styled.div`
 
 const SearchTerm = styled.input`
   width: 100%;
-  border: 3px solid #00B4CC;
+  border: 3px solid #ddd;
   border-right: none;
   padding: 5px;
   height: 30px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9DBFAF;
+  color: #ddd;
     &:focus {
-      color: #00B4CC;
+      color: #000;
     }
 `
 
 const SearchButton = styled.button`
   width: 40px;
   height: 36px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
+  border: 1px solid #ddd;
+  background: #ddd;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;

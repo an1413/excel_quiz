@@ -1,8 +1,7 @@
 import styled from "styled-components";
-// import React from "react";
-//
+
 export const DataInputStyle = styled.input`
-  width: 100%;
+  width: 280px;
   height: 48px;
   font-size: 16px;
   background-color: none;
@@ -10,6 +9,7 @@ export const DataInputStyle = styled.input`
   padding-bottom: 0px;
   border-bottom: 1px solid #dbdbdb;
   outline: none;
+  margin: 0 auto;
 
   ::placeholder {
     color: #dbdbdb;
@@ -35,7 +35,7 @@ export const Cont = styled.div`
 
 export const InpLabel = styled.label`
   font-size: 16px;
-  color: #767676;
+  color: #000;
   font-weight: 500;
   margin-bottom: 5px;
   display: block;
