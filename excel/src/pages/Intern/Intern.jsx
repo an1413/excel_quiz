@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import HomeButton from '../../component/common/HomeButton';
 import Back from '../../component/common/Back';
-import styled from 'styled-components';
 import dummy from '../../db/intern.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { InternWrapper, QuestionDiv, InternAnswer, InternHint, HintImage, QuestionH1, QuestionP, AnswerInput, AnswerButton, InternHintStrong, ButtonWrapper, AnswerForm } from './intern.style';
@@ -17,6 +15,7 @@ export default function Intern() {
   const intern_question = dummy[stage_intern - 1].question;
   const intern_answer = dummy[stage_intern - 1].answer.toString();
   const intern_sheet_photo = require(`../../img/sheet_photo/2-answer-${stage_intern}.png`);
+  const intern_hint = dummy[stage_intern - 1].hint;
 
   const linkFeed = () => {
     navigate("/");
@@ -42,7 +41,7 @@ export default function Intern() {
 
   const handleButton = () => {
     console.log('g');
-    // intern_Success();
+    console.log(stage_intern);
     if (inputValue.replace(/\s+/g, '') === intern_answer) {
       // 정답과 입력값이 일치하면 스테이지를 업데이트
       if(stage_intern === 20) {
@@ -51,6 +50,7 @@ export default function Intern() {
         icon: 'success',
         timer: 2500,
       })
+      localStorage.setItem('stage_intern', '1');
       linkFeed();
       }
       else {
@@ -59,45 +59,60 @@ export default function Intern() {
         setInputValue(''); // 입력값 초기화
       }
     } else {
-      alert('다시한번 풀어주세요.');
+        if(inputValue === "") {
+      Swal.fire({
+        icon: 'warning',
+        title: '정답을 입력해주세요.',
+        text: '입력창에 답을 입력해주세요.',
+    })
+      } else {
+      Swal.fire({
+        icon: 'error',
+        title: '틀렸습니다.',
+        text: '다시한번 풀어보세요. 힌트가 도움이 될겁니다.',
+    })
+  }
       console.log(typeof inputValue);
       console.log(typeof intern_answer);
       console.log('wrong');
       setInputValue('');
     }
   };
-  const handleFormSubmit = (e) => {
-  e.preventDefault(); // 폼 기본 제출 동작 막기
+//   const handleFormSubmit = (e) => {
+//   e.preventDefault(); // 폼 기본 제출 동작 막기
 
-  if (inputValue.replace(/\s+/g, '') === intern_answer) {
-    if (stage_intern === 20) {
-      Swal.fire({
-        title: "중급문제풀이가 끝났습니다\n홈화면으로 이동합니다",
-        icon: 'success',
-        timer: 2500,
-      })
-      linkFeed();
-    } else {
-      Swal.fire("잘하셨어요! 정답입니다.")
-      setStage_intern(stage_intern + 1);
-      setInputValue(''); // 입력값 초기화
-    }
-  } else {
-    alert('다시한번 풀어주세요.');
-    setInputValue('');
-  }
-};
+//   if (inputValue.replace(/\s+/g, '') === intern_answer) {
+//     if (stage_intern === 20) {
+//       stage_intern = 1;
+//       intern_Success();
+//       linkFeed();
+//     } else {
+//       Swal.fire("잘하셨어요! 정답입니다.")
+//       setStage_intern(stage_intern + 1);
+//       setInputValue(''); // 입력값 초기화
+//     }
+//   } else {
+//     Swal.fire({
+//       icon: 'error',
+//       title: '틀렸습니다.',
+//       text: '다시한번 풀어보세요. 힌트가 도움이 될겁니다.',
+// })
+//     setInputValue('');
+//   }
+// };
 
   const intern_Success = () => {
     if (stage_intern === 20) {
-      Swal.fire({
-        title: '중급문제풀이가 끝났습니다. 수고하셨습니다!',
-        icon: 'success',
-        timer: 1500,
-      })
+    Swal.fire({
+      title: '중급 문제 풀이가 끝났습니다. 수고하셨습니다!',
+      icon: 'success',
+      timer: 1500,
+    }).then(() => {
+      // localStorage.setItem('stage_intern', '1'); // stage_intern 값을 1로 초기화
       linkFeed();
-      return;
-    }
+    });
+    return;
+  }
   };
 
   return (
@@ -108,11 +123,11 @@ export default function Intern() {
             <ButtonWrapper>
               <Back />
               <Reset/>
-              <Hint/>
+              <Hint hint={intern_hint}/>
             </ButtonWrapper>
             <QuestionH1>Intern {stage_intern}번 문제</QuestionH1>
             <QuestionP>{intern_question}</QuestionP>
-            <AnswerForm onSubmit={handleFormSubmit}>
+            <AnswerForm>
               <AnswerInput
               type="text"
               required
@@ -128,7 +143,6 @@ export default function Intern() {
           <div className='col col-sm-12 col-md-6 col-lg-6'>
             <div>
             <InternAnswer>
-              {/* {intern_answer} */}
             </InternAnswer>
             </div>
             <br></br>
@@ -142,27 +156,6 @@ export default function Intern() {
           </div>
         </div>
       </div>
-      {/* <Back />
-      <h1>Intern {stage_intern}번 문제</h1>
-      <HomeButton />
-      <p>{intern_question}</p>
-      <form action="">
-        <input
-          type="text"
-          required
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
-        />
-        <button type="button" onClick={handleButton}>
-          정답입력
-        </button>
-      </form>
-      <internAnswer>정답출력: {intern_answer}</internAnswer> */}
-      {/* <div>힌트화면: {intern_sheet_photo}</div> */}
-      {/* <internHint>
-        힌트화면 <HintImage src={intern_sheet_photo} alt="힌트 이미지" />
-      </internHint>
-      intern */}
     </InternWrapper>
   );
 }
