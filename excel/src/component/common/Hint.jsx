@@ -2,13 +2,12 @@ import React from 'react'
 import styled from "styled-components";
 import Swal from "sweetalert2";
 
-export default function Hint() {
+export default function Hint({hint}) {
 
   const hintView = () => {
     Swal.fire(
-        '처리 완료되었습니다',
-        '첫번째 문제로 돌아갑니다.',
-        '완료'
+        '힌트',
+        `${hint}`
       )
   }
 
