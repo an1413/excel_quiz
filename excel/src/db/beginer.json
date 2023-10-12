@@ -3,120 +3,140 @@
     "number": 1,
     "question": "인수들의 평균값을 구하시오.",
     "answer": "=average(A2:A6)",
-    "sheet_photo": "1-answer-1"
+    "sheet_photo": "1-answer-1",
+    "hint": "AVERAGE"
   },
   {
     "number": 2,
     "question": "표에 숫자가 들어있는 개수를 구하시오.",
     "answer": "=count(A2:A6)",
-    "sheet_photo": "1-answer-2"
+    "sheet_photo": "1-answer-2",
+    "hint": "COUNT"
   },
   {
     "number": 3,
     "question": "지정한 연,월,일로 날짜 데이터를 만드는 함수를 구하시오.",
     "answer": "=date(B2,C2,D2)",
-    "sheet_photo": "1-answer-3"
+    "sheet_photo": "1-answer-3",
+    "hint": "DATE"
   },
   {
     "number": 4,
     "question": "지정한 시,분,초로 시간데이터를 만드는 함수를 구하시오.",
     "answer": "=time(B2,C2,D2)",
-    "sheet_photo": "1-answer-4"
+    "sheet_photo": "1-answer-4",
+    "hint": "TIME"
   },
   {
     "number": 5,
     "question": "A2셀 텍스트의 문자 수를 구하는 함수를 구하시오.",
     "answer": "=len(A2)",
-    "sheet_photo": "1-answer-5"
+    "sheet_photo": "1-answer-5",
+    "hint": "LEN"
   },
   {
     "number": 6,
     "question": "A2셀이 공백셀인지 조사하는 함수를 구하시오.",
     "answer": "=isblank(A2)",
-    "sheet_photo": "1-answer-6"
+    "sheet_photo": "1-answer-6",
+    "hint": "ISBLACK"
   },
   {
     "number": 7,
     "question": "C3셀의 행 번호를  반환하는 함수를 구하시오.",
     "answer": "=row(C3)",
-    "sheet_photo": "1-answer-7"
+    "sheet_photo": "1-answer-7",
+    "hint": "ROW"
   },
   {
     "number": 8,
     "question": "표에 존재하는 인수들중 가장 많이나오는 최빈값을 구하시오.",
     "answer": "=mode(A2:A5)",
-    "sheet_photo": "1-answer-8"
+    "sheet_photo": "1-answer-8",
+    "hint": "MODE"
   },
   {
     "number": 9,
     "question": "A2:A10 목록중 최대값을 구하시오.",
     "answer": "=max(A2:A10)",
-    "sheet_photo": "1-answer-9"
+    "sheet_photo": "1-answer-9",
+    "hint": "MAX"
   },
   {
     "number": 10,
     "question": "A2:A10 목록중 최소값을 구하시오.",
     "answer": "=min(A2:A10)",
-    "sheet_photo": "1-answer-10"
+    "sheet_photo": "1-answer-10",
+    "hint": "MIN"
   },
   {
     "number": 11,
     "question": "A2:A10 중 2번째로 큰 값을 구하시오.",
     "answer": "=large(A2:A10,2)",
-    "sheet_photo": "1-answer-11"
+    "sheet_photo": "1-answer-11",
+    "hint": "LARGE"
   },
   {
     "number": 12,
     "question": "A2:A10 중 3번째로 작은 값을 구하시오.",
     "answer": "=small(A2:A10,3)",
-    "sheet_photo": "1-answer-12"
+    "sheet_photo": "1-answer-12",
+    "hint": "SMALL"
   },
   {
     "number": 13,
     "question": "표본의 범위에서 분산을 구하시오.",
     "answer": "=val(A2:A10)",
-    "sheet_photo": "1-answer-13"
+    "sheet_photo": "1-answer-13",
+    "hint": "VAL"
   },
   {
     "number": 14,
     "question": "표본의 범위에서 표준편차를 구하시오.",
     "answer": "=stdev(A2:A10)",
-    "sheet_photo": "1-answer-14"
+    "sheet_photo": "1-answer-14",
+    "hint": "STDEV"
   },
   {
     "number": 15,
     "question": "A2:A10까지의 인수들의 합을 구하시오.",
     "answer": "=sum(A2:A10)",
-    "sheet_photo": "1-answer-15"
+    "sheet_photo": "1-answer-15",
+    "hint": "SUM"
   },
   {
     "number": 16,
     "question": "A2셀 값을 소수 2 자리수까지 반올림한 값을 구하시오.",
     "answer": "=round(A2,2)",
-    "sheet_photo": "1-answer-16"
+    "sheet_photo": "1-answer-16",
+    "hint": "ROUND"
   },
   {
     "number": 17,
     "question": "인수를 제수로 나눈 결과의 나머지를 구하시오.",
     "answer": "=mod(A2,B2)",
-    "sheet_photo": "1-answer-17"
+    "sheet_photo": "1-answer-17",
+    "hint": "MOD"
   },
   {
     "number": 18,
     "question": "인수를 전부 곱한 값을 구하시오.",
     "answer": "=product(A2:A6)",
-    "sheet_photo": "1-answer-18"
+    "sheet_photo": "1-answer-18",
+    "hint": "PRODUCT"
   },
   {
     "number": 19,
     "question": "표의 숫자의 양의 제곱근을 구하시오.",
     "answer": "=sqrt(A2)",
-    "sheet_photo": "1-answer-19"
+    "sheet_photo": "1-answer-19",
+    "hint": "SQRT"
   },
   {
     "number": 20,
     "question": "표의 숫자의 절대값을 구하시오.",
     "answer": "=abs(A2)",
-    "sheet_photo": "1-answer-20"
+    "sheet_photo": "1-answer-20",
+    "hint": "ABS"
   }
 ]
