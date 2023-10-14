@@ -16,10 +16,10 @@ export const QuestionH1 = styled.h1`
 export const QuestionP = styled.p`
   background-color: #ddd;
   text-align: left;
+  font-size: 1.1rem;
 `;
 
 export const AnswerForm = styled.form`
-  /* display: flex; */
   text-align: left;
 `
 
@@ -30,7 +30,7 @@ export const AnswerInput = styled.input`
 `;
 
 export const AnswerButton = styled.button`
-  width: 4.7rem;
+  width: 5rem;
   height: 40px;
   border-radius: 4px;
   &:hover {
@@ -46,14 +46,11 @@ export const InternAnswer = styled.div`
 `;
 
 export const InternHintStrong = styled.div`
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   /* margin-bottom: 1rem; */
 `
 
 export const InternHint = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   width: 300px;
   height: 300px;
 `;

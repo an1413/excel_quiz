@@ -1,90 +1,163 @@
-import React, { useState } from 'react'
-import HomeButton from '../../component/common/HomeButton';
+import React, { useState, useEffect } from 'react';
 import Back from '../../component/common/Back';
-import styled from "styled-components";
-import dummy from "../../db/beginer.json";
-// import Begin1 from "../../img/sheet_photo/1-answer-1.jpg";
-// import Begin2 from "../../img/sheet_photo/1-answer-2.jpg";
-// import Begin3 from "../../img/sheet_photo/1-answer-3.jpg";
-// import Begin4 from "../../img/sheet_photo/1-answer-4.jpg";
-// import Begin5 from "../../img/sheet_photo/1-answer-5.jpg";
-// import Begin6 from "../../img/sheet_photo/1-answer-6.jpg";
-// import Begin7 from "../../img/sheet_photo/1-answer-7.jpg";
-// import Begin8 from "../../img/sheet_photo/1-answer-8.jpg";
-// import Begin9 from "../../img/sheet_photo/1-answer-9.jpg";
+import dummy from '../../db/beginer.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BeginerWrapper, QuestionDiv, BeginerAnswer, BeginerHint, HintImage, QuestionH1, QuestionP, AnswerInput, AnswerButton, BeginerHintStrong, ButtonWrapper, AnswerForm } from './beginer.style';
+import Reset from '../../component/common/Reset';
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import Hint from '../../component/common/Hint';
 
-export default function Beginner() {
-  const [stage_beginner, setStage_beginner] = useState(1);
-  const [inputValue, setInputValue] = useState("");
-  const beginner_question = dummy[stage_beginner - 1].question;
-  const beginner_answer = dummy[stage_beginner - 1].answer.toString();
-  // const beginner_sheet_photo = dummy[stage_beginner - 1].sheet_photo;
+export default function Beginer() {
+  const navigate = useNavigate();
+  const [stage_beginer, setStage_beginer] = useState(1);
+  const [inputValue, setInputValue] = useState('');
+  const beginer_question = dummy[stage_beginer - 1].question;
+  const beginer_answer = dummy[stage_beginer - 1].answer.toString();
+  const beginer_sheet_photo = require(`../../img/sheet_photo/1-answer-${stage_beginer}.png`);
+  const beginer_hint = dummy[stage_beginer - 1].hint;
 
-  const beginner_sheet_photo = require(`../../img/sheet_photo/1-answer-${stage_beginner}.jpg`);
+  const linkFeed = () => {
+    navigate("/");
+  }
+
+  // stage_beginer 값을 로컬 스토리지에 저장하는 함수
+  const saveStageBeginerToLocalStorage = (value) => {
+    localStorage.setItem('stage_beginer', value.toString());
+  };
+
+  // 컴포넌트가 마운트될 때 로컬 스토리지에서 stage_beginer 값을 불러옴
+  useEffect(() => {
+    const storedStageBeginer = localStorage.getItem('stage_beginer');
+    if (storedStageBeginer) {
+      setStage_beginer(parseInt(storedStageBeginer, 10));
+    }
+  }, []);
+
+  // stage_beginer 값이 업데이트될 때마다 로컬 스토리지에 저장
+  useEffect(() => {
+    saveStageBeginerToLocalStorage(stage_beginer);
+  }, [stage_beginer]);
+
   const handleButton = () => {
-    console.log("g");
-    Beginner_Success();
-    if (inputValue === beginner_answer) {
+    console.log('g');
+    console.log(stage_beginer);
+    if (inputValue.replace(/\s+/g, '') === beginer_answer) {
       // 정답과 입력값이 일치하면 스테이지를 업데이트
-      alert("정답입니다. 다음단계로 넘어가시겠습니까?");
-      setStage_beginner(stage_beginner + 1);
-      setInputValue(""); // 입력값 초기화
-    }
-    else {
-      alert("다시한번 풀어주세요.")
+      if(stage_beginer === 20) {
+        Swal.fire({
+        title: "중급문제풀이가 끝났습니다\n홈화면으로 이동합니다",
+        icon: 'success',
+        timer: 2500,
+      })
+      localStorage.setItem('stage_beginer', '1');
+      linkFeed();
+      }
+      else {
+        Swal.fire("잘하셨어요! 정답입니다.")
+        setStage_beginer(stage_beginer + 1);
+        setInputValue(''); // 입력값 초기화
+      }
+    } else {
+        if(inputValue === "") {
+      Swal.fire({
+        icon: 'warning',
+        title: '정답을 입력해주세요.',
+        text: '입력창에 답을 입력해주세요.',
+    })
+      } else {
+      Swal.fire({
+        icon: 'error',
+        title: '틀렸습니다.',
+        text: '다시한번 풀어보세요. 힌트가 도움이 될겁니다.',
+    })
+  }
       console.log(typeof inputValue);
-      console.log(typeof beginner_answer);
-      console.log("wrong");
-      setInputValue("");
+      console.log(typeof beginer_answer);
+      console.log('wrong');
+      setInputValue('');
     }
-  }
+  };
+//   const handleFormSubmit = (e) => {
+//   e.preventDefault(); // 폼 기본 제출 동작 막기
 
-  const Beginner_Success = () => {
-    if(stage_beginner === 21) {
-      console.log("종료");
-    }
+//   if (inputValue.replace(/\s+/g, '') === beginer_answer) {
+//     if (stage_beginer === 20) {
+//       stage_beginer = 1;
+//       beginer_Success();
+//       linkFeed();
+//     } else {
+//       Swal.fire("잘하셨어요! 정답입니다.")
+//       setStage_beginer(stage_beginer + 1);
+//       setInputValue(''); // 입력값 초기화
+//     }
+//   } else {
+//     Swal.fire({
+//       icon: 'error',
+//       title: '틀렸습니다.',
+//       text: '다시한번 풀어보세요. 힌트가 도움이 될겁니다.',
+// })
+//     setInputValue('');
+//   }
+// };
+
+  const beginer_Success = () => {
+    if (stage_beginer === 20) {
+    Swal.fire({
+      title: '중급 문제 풀이가 끝났습니다. 수고하셨습니다!',
+      icon: 'success',
+      timer: 1500,
+    }).then(() => {
+      // localStorage.setItem('stage_beginer', '1'); // stage_beginer 값을 1로 초기화
+      linkFeed();
+    });
+    return;
   }
+  };
 
   return (
-    <BeginnerWrapper>
-      <Back />
-      <h1>Begginner {stage_beginner}번 문제</h1>
-      <HomeButton />
-      <p>{beginner_question}</p>
-      <form action="">
-        <input
-          type="text"
-          required
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
-        />
-        <button type='button' onClick={handleButton}>정답입력</button>
-      </form>
-      <BeginnerAnswer>정답출력: {beginner_answer}</BeginnerAnswer>
-      {/* <div>힌트화면: {beginner_sheet_photo}</div> */}
-      <BeginnerHint>힌트화면 <HintImage src={beginner_sheet_photo} alt="힌트 이미지" /></BeginnerHint>
-      Beginner
-    </BeginnerWrapper>
-  )
+    <BeginerWrapper>
+      <div className='container'>
+        <div className='row'>
+          <QuestionDiv className='col col-sm-12 col-md-12 col-lg-6'>
+            <ButtonWrapper>
+              <Back />
+              <Reset/>
+              <Hint hint={beginer_hint}/>
+            </ButtonWrapper>
+            <QuestionH1>Beginer {stage_beginer}번 문제</QuestionH1>
+            <QuestionP>{beginer_question}</QuestionP>
+            <AnswerForm>
+              <AnswerInput
+              type="text"
+              required
+              placeholder='여기에 정답을 입력해주세요.'
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
+              />
+              <AnswerButton type="button" onClick={handleButton}>
+                정답입력
+              </AnswerButton>
+            </AnswerForm>
+          </QuestionDiv>
+          <div className='col col-sm-12 col-md-6 col-lg-6'>
+            <div>
+            <BeginerAnswer>
+            </BeginerAnswer>
+            </div>
+            <br></br>
+            <BeginerHint>
+              <BeginerHintStrong>
+                참고화면
+              </BeginerHintStrong>
+              <br></br>
+              <HintImage src={beginer_sheet_photo} alt="힌트 이미지" />
+            </BeginerHint>
+          </div>
+        </div>
+      </div>
+    </BeginerWrapper>
+  );
 }
 
-const BeginnerWrapper = styled.div`
-  text-align: center;
-`
 
-const BeginnerAnswer = styled.div`
-  font-size: 2rem;
-`
-
-const BeginnerHint = styled.div`
-  display:flex;
-  align-items: center;
-  width: 300px;
-  height: 300px;
-`
-
-const HintImage = styled.img`
-  text-align: center;
-  width: 300px;
-  height: 300px;
-`
