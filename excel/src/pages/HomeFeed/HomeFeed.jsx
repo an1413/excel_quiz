@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Newbie from "../../img/newbie3.png"
 import Intern from "../../img/promotion3.png";
 import Expert from "../../img/rating3.png";
+import Test from "../../img/senior.png";
 import { useNavigate } from "react-router-dom";
 
 export default function HomeFeed() {
@@ -38,7 +39,7 @@ export default function HomeFeed() {
                 src={
                   Newbie
                 }
-                alt="뉴비"
+                alt="초급문제풀이"
               />
             </LevelImg>
             <LevelName>초급</LevelName>
@@ -54,7 +55,7 @@ export default function HomeFeed() {
                 src={
                   Intern
                 }
-                alt="뉴비"
+                alt="중급문제풀이"
               />
             </LevelImg>
             <LevelName>중급</LevelName>
@@ -70,7 +71,7 @@ export default function HomeFeed() {
                 src={
                   Expert
                 }
-                alt="뉴비"
+                alt="고급문제풀이"
               />
             </LevelImg>
             <LevelName>고급</LevelName>
@@ -83,9 +84,9 @@ export default function HomeFeed() {
               <Img
                 aria-label="채팅방 이동버튼"
                 src={
-                  Expert
+                  Test
                 }
-                alt="뉴비"
+                alt="전체 모의고사"
               />
             </LevelImg>
             <LevelName>시험보기</LevelName>
