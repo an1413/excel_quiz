@@ -34,7 +34,7 @@
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/assets/iconfont/iconfont.css' />
     <script src="https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/js/plugin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/luckysheet.umd.js"></script>
-    <script>var Alert = ReactBootstrap.Alert;</script>
+    <!-- <script>var Alert = ReactBootstrap.Alert;</script> -->
 
     <div id="luckysheet"
       style="margin-left:0px;padding:0px;position:relative;width:700px;height:450px;left: 160px;top: 450px;">
@@ -42,7 +42,7 @@
 
     <script>
       // URL 경로에 따라 스프레드시트를 나타낼 div를 표시/숨김 처리
-      if (window.location.pathname === '/intern') {
+      if (window.location.pathname === '/intern' || window.location.pathname === '/beginner' || window.location.pathname === '/expert') {
         document.getElementById('luckysheet').style.display = 'block';
       } else {
         document.getElementById('luckysheet').style.display = 'none';
