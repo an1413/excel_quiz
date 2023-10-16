@@ -23,31 +23,3 @@ const DictionaryWrapper = styled.div`
   max-width: 1400px;
   margin-top: 2rem;
 `
-
-const FunctionList = styled.div`
-  display: flex;
-  border: 1px solid #ddd;
-  align-items: center;
-  background-color: #ddd;
-`
-
-const FunctionNameWrapper = styled.div`
-  display:flex;
-  align-items: center;
-`
-
-const FunctionName = styled.h3`
-  font-size: 1.3rem;
-`
-
-const FunctionExplainWrapper = styled.div`
-  display: flex;
-  margin-top: 4px;
-  justify-content: center;
-`
-
-const FunctionExplain = styled.p`
-  font-size: 1rem;
-`
-
-

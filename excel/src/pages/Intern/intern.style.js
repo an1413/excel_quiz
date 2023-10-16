@@ -42,23 +42,21 @@ export const AnswerButton = styled.button`
 export const InternAnswer = styled.div`
   font-size: 2rem;
   background-color: #ddd;
-  /* margin-bottom: 2px; */
 `;
 
 export const InternHintStrong = styled.div`
   font-size: 1.5rem;
-  /* margin-bottom: 1rem; */
 `
 
 export const InternHint = styled.div`
-  width: 300px;
+  width: 400px;
   height: 300px;
 `;
 
 export const HintImage = styled.img`
   text-align: center;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 `;
 
 export const ButtonWrapper = styled.div`

@@ -78,28 +78,6 @@ export default function Beginer() {
       setInputValue('');
     }
   };
-//   const handleFormSubmit = (e) => {
-//   e.preventDefault(); // 폼 기본 제출 동작 막기
-
-//   if (inputValue.replace(/\s+/g, '') === beginer_answer) {
-//     if (stage_beginer === 20) {
-//       stage_beginer = 1;
-//       beginer_Success();
-//       linkFeed();
-//     } else {
-//       Swal.fire("잘하셨어요! 정답입니다.")
-//       setStage_beginer(stage_beginer + 1);
-//       setInputValue(''); // 입력값 초기화
-//     }
-//   } else {
-//     Swal.fire({
-//       icon: 'error',
-//       title: '틀렸습니다.',
-//       text: '다시한번 풀어보세요. 힌트가 도움이 될겁니다.',
-// })
-//     setInputValue('');
-//   }
-// };
 
   const beginer_Success = () => {
     if (stage_beginer === 20) {
@@ -108,7 +86,6 @@ export default function Beginer() {
       icon: 'success',
       timer: 1500,
     }).then(() => {
-      // localStorage.setItem('stage_beginer', '1'); // stage_beginer 값을 1로 초기화
       linkFeed();
     });
     return;

@@ -66,16 +66,16 @@ export default function Login() {
       e.preventDefault();
       try {
         const data = await loginAPI(user);
-
         if (data.message === "이메일 또는 비밀번호가 일치하지 않습니다.") {
           setErrorMsg(data.message);
           setEmailValue("");
           setPasswordValue("");
           return;
         } else {
+          console.log("success");
           setAccessToken(data.user.token);
           localStorage.setItem("accessToken", data.user.token);
-          Navigate("/post");
+          Navigate("/");
         }
       } catch (error) {
         console.log(error);

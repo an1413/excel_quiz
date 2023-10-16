@@ -4,7 +4,6 @@ import {
   Routes,
   Route,
   Outlet,
-  Navigate,
 } from "react-router-dom";
 import HomeFeed from "../pages/HomeFeed/HomeFeed";
 import Expert from "../pages/Expert/Expert";
@@ -13,11 +12,9 @@ import Beginner from "../pages/Beginner/Beginner";
 import Intern from "../pages/Intern/Intern";
 import Completion from '../pages/Completion/Completion';
 import TestRandom from '../pages/TestRandom/TestRandom';
-// import Signup from '../pages/Signup/Signup';
 import UserAccount from '../pages/Signup/userAccount/UserAccount';
 import ProfileSettingUI from '../pages/Signup/profileSetting/ProfileSetting.presenter';
 import LoginPresenter from '../pages/Login/login.presenter';
-// import Navbar from '../component/Navbar';
 
 export default function Router() {
   return (
@@ -25,7 +22,6 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<HomeFeed/>}/>
         <Route path='/login' element={<LoginPresenter/>}/>
-        
         <Route path='/signup/*' element={<Outlet/>}>
           <Route path='' element={<UserAccount/>}/>
           <Route path='profileSetting/' element={<ProfileSettingUI/>}/>
