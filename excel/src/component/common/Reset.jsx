@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Swal from "sweetalert2";
 
 export default function Reset() {
@@ -12,7 +12,7 @@ export default function Reset() {
       thisLevel = "intern"
     }
     else if (location.pathname === "/beginner") {
-      thisLevel = "begin"
+      thisLevel = "beginer"
     }
     else if (location.pathname === "/expert") {
       thisLevel = "expert"
