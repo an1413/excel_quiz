@@ -46,7 +46,7 @@ export default function Expert() {
       // 정답과 입력값이 일치하면 스테이지를 업데이트
       if(stage_expert === 20) {
         Swal.fire({
-        title: "중급문제풀이가 끝났습니다\n홈화면으로 이동합니다",
+        title: "고급문제풀이가 끝났습니다\n홈화면으로 이동합니다",
         icon: 'success',
         timer: 2500,
       })
@@ -104,7 +104,7 @@ export default function Expert() {
   const expert_Success = () => {
     if (stage_expert === 20) {
     Swal.fire({
-      title: '중급 문제 풀이가 끝났습니다. 수고하셨습니다!',
+      title: '고급 문제 풀이가 끝났습니다. 수고하셨습니다!',
       icon: 'success',
       timer: 1500,
     }).then(() => {
