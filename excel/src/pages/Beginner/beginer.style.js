@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const BeginerWrapper = styled.div`
   padding: 2rem;
+//  커밋 테스트
 `;
 
 export const QuestionDiv = styled.div`
