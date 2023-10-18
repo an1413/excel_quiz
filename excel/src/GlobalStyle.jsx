@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: GmarketSansMedium, "Arial", sans-serif;
+    font-family: 'GmarketSansMedium', "Arial", sans-serif;
     line-height: 1.5;
     background-color: #99A98F;
   }

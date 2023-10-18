@@ -16,14 +16,14 @@
   {
     "number": 3,
     "question": "지정한 연,월,일로 날짜 데이터를 만드는 함수를 구하시오.",
-    "answer": "=date(B2,C2,D2)",
+    "answer": "=date(A2,B2,C2)",
     "sheet_photo": "1-answer-3",
     "hint": "DATE"
   },
   {
     "number": 4,
     "question": "지정한 시,분,초로 시간데이터를 만드는 함수를 구하시오.",
-    "answer": "=time(B2,C2,D2)",
+    "answer": "=time(A2,B2,C2)",
     "sheet_photo": "1-answer-4",
     "hint": "TIME"
   },

@@ -18,13 +18,16 @@ export const LevelName = styled.div`
 `
 
 export const LevelButton = styled.button`
+  background-color: #4B504B;
+  color: white;
   margin-bottom: 1rem;
   width: 180px;
   height: 40px;
   border-radius: 1rem;
+  font-family: 'GmarketSansMedium';
+  font-size: 20px;
   &:hover {
-    background-color: #05742a;
-    color: #fff;
+    scale: 1.1;
   }
 `
 

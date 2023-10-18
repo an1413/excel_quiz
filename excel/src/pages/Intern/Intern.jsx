@@ -102,7 +102,7 @@ export default function Intern() {
               <Reset/>
               <Hint hint={intern_hint}/>
             </ButtonWrapper>
-            <QuestionH1>Intern {stage_intern}번 문제</QuestionH1>
+            <QuestionH1>중급 {stage_intern}번 문제</QuestionH1>
             <QuestionP>{intern_question}</QuestionP>
             <AnswerForm>
               <AnswerInput

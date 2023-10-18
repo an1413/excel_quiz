@@ -32,10 +32,11 @@ export const LoginForm = styled.form`
 
 export const SignupButton = styled(Button)`
   margin-top: 50px;
-  background-color: #05742a;
+  background-color: #998066;
   color: #fff;
   font-weight: 700;
   font-size: 1.2rem;
+  font-family: 'GmarketSansMedium';
   ${(props) =>
     props.disabled &&
     css`

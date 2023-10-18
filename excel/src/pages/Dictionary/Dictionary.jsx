@@ -22,4 +22,5 @@ const DictionaryWrapper = styled.div`
   padding: 2rem;
   max-width: 1400px;
   margin-top: 2rem;
+  background-color: #F5F3F0;
 `

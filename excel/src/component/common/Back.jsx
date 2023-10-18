@@ -12,11 +12,15 @@ export default function Back() {
 }
 
 const BackButton = styled.button`
-  width: 62px;
-  border-radius: 4px;
+  font-size: 15px;
+  width: 80px;
+  background-color: black;
+  color: white;
+  font-family: 'GmarketSansMedium';
   padding: 2px;
+  border-radius: 4px;
   &:hover {
-    background-color: #05742a;
+    background-color: #4B504B;
     color: #fff;
   }
 `

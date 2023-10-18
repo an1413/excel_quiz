@@ -9,7 +9,7 @@ function CollapsibleExample() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">엑셀문제</Navbar.Brand>
+        <Navbar.Brand href="/">EFSS</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -19,7 +19,7 @@ function CollapsibleExample() {
               <NavDropdown.Item href="/expert">고급</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/test">
-                실전테스트
+                시험보기
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/dictionary">함수사전</Nav.Link>

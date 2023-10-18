@@ -95,6 +95,7 @@ export default function Beginer() {
   return (
     <BeginerWrapper>
       <div className='container'>
+
         <div className='row'>
           <QuestionDiv className='col col-sm-12 col-md-12 col-lg-6'>
             <ButtonWrapper>
@@ -102,7 +103,7 @@ export default function Beginer() {
               <Reset/>
               <Hint hint={beginer_hint}/>
             </ButtonWrapper>
-            <QuestionH1>Beginer {stage_beginer}번 문제</QuestionH1>
+            <QuestionH1>초급 {stage_beginer}번 문제</QuestionH1>
             <QuestionP>{beginer_question}</QuestionP>
             <AnswerForm>
               <AnswerInput

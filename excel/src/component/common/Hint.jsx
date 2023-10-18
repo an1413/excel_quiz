@@ -12,16 +12,20 @@ export default function Hint({hint}) {
   }
 
   return (
-    <Button onClick={hintView}>힌트보기</Button>
+    <Button onClick={hintView}>힌트</Button>
   )
 }
 
 const Button = styled.button`
-  width: 150px;
+  font-size: 15px;
+  width: 50px;
+  background-color: black;
+  color: white;
+  font-family: 'GmarketSansMedium';
   padding: 2px;
   border-radius: 4px;
   &:hover {
-    background-color: #05742a;
+    background-color: #4B504B;
     color: #fff;
   }
 `

@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Newbie from "../../img/newbie3.png"
 import Intern from "../../img/promotion3.png";
 import Expert from "../../img/rating3.png";
-import Test from "../../img/senior.png";
+import Test from "../../img/exam3.png";
 import { useNavigate } from "react-router-dom";
 
 export default function HomeFeed() {
@@ -87,6 +87,7 @@ export default function HomeFeed() {
                   Test
                 }
                 alt="전체 모의고사"
+
               />
             </LevelImg>
             <LevelName>시험보기</LevelName>
