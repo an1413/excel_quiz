@@ -14,9 +14,9 @@ export const QuestionH1 = styled.h1`
 `;
 
 export const QuestionP = styled.p`
-  background-color: #ddd;
+  background-color: #f5f3f0;
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 `;
 
 export const AnswerForm = styled.form`
@@ -30,11 +30,15 @@ export const AnswerInput = styled.input`
 `;
 
 export const AnswerButton = styled.button`
+  font-size: 15px;
+  font-family: 'GmarketSansMedium';
+  background-color: black;
+  color: white;
   width: 5rem;
   height: 40px;
   border-radius: 4px;
   &:hover {
-    background-color: #05742a;
+    background-color: #4B504B;
     color: #fff;
   }
 `;
@@ -55,8 +59,9 @@ export const BeginerHint = styled.div`
 
 export const HintImage = styled.img`
   text-align: center;
-  width: 400px;
-  height: 400px;
+  width: 140%;
+  height: 100%;
+  margin-left: 6.5rem;
 `;
 
 export const ButtonWrapper = styled.div`

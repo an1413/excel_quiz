@@ -45,13 +45,13 @@ const SearchMain = styled.div`
 
 const SearchTerm = styled.input`
   width: 100%;
-  border: 3px solid #ddd;
+  border: 3px solid #D7CEC7;
   border-right: none;
   padding: 5px;
-  height: 30px;
+  height: 36px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #ddd;
+  color: #D7CEC7;
     &:focus {
       color: #000;
     }
@@ -60,8 +60,8 @@ const SearchTerm = styled.input`
 const SearchButton = styled.button`
   width: 40px;
   height: 36px;
-  border: 1px solid #ddd;
-  background: #ddd;
+  border: 1px solid #D7CEC7;
+  background: #D7CEC7;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;

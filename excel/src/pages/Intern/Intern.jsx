@@ -7,6 +7,7 @@ import Reset from '../../component/common/Reset';
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import Hint from '../../component/common/Hint';
+import Record from '../../component/Record';
 
 export default function Intern() {
   const navigate = useNavigate();
@@ -102,7 +103,7 @@ export default function Intern() {
               <Reset/>
               <Hint hint={intern_hint}/>
             </ButtonWrapper>
-            <QuestionH1>Intern {stage_intern}번 문제</QuestionH1>
+            <QuestionH1>중급 {stage_intern}번 문제</QuestionH1>
             <QuestionP>{intern_question}</QuestionP>
             <AnswerForm>
               <AnswerInput
@@ -119,8 +120,9 @@ export default function Intern() {
           </QuestionDiv>
           <div className='col col-sm-12 col-md-6 col-lg-6'>
             <div>
-            <InternAnswer>
-            </InternAnswer>
+            {/* <InternAnswer>
+            </InternAnswer> */}
+            <Record/>
             </div>
             <br></br>
             <InternHint>

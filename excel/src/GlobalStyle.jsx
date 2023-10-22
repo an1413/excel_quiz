@@ -6,10 +6,11 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     padding: 0;
     text-align: center;
+    font-family: 'GmarketSansMedium';
   }
 
   body {
-    font-family: GmarketSansMedium, "Arial", sans-serif;
+    font-family: 'GmarketSansMedium', "Arial", sans-serif;
     line-height: 1.5;
     background-color: #99A98F;
   }

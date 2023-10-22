@@ -31,7 +31,7 @@ export const Title = styled.h1`
 
 export const SignupButton = styled(Button)`
   margin-top: 50px;
-  background-color: #05742a;
+  background-color: #998066;
   color: #fff;
   font-weight: 700;
   font-size: 1.2rem;

@@ -102,7 +102,7 @@ export default function Expert() {
               <Reset/>
               <Hint hint={expert_hint}/>
             </ButtonWrapper>
-            <QuestionH1>Expert {stage_expert}번 문제</QuestionH1>
+            <QuestionH1>고급 {stage_expert}번 문제</QuestionH1>
             <QuestionP>{expert_question}</QuestionP>
             <AnswerForm>
               <AnswerInput
@@ -125,10 +125,10 @@ export default function Expert() {
             <br></br>
             <ExpertHint>
               <ExpertHintStrong>
-                참고화면
+                {/* 참고화면 */}
               </ExpertHintStrong>
               <br></br>
-              <HintImage src={expert_sheet_photo} alt="힌트 이미지" />
+              <HintImage src={expert_sheet_photo} alt="힌트 이미지" onclick="window.open(this.src)"/>
             </ExpertHint>
           </div>
         </div>
