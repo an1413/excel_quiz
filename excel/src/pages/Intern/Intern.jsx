@@ -125,7 +125,7 @@ export default function Intern() {
             <br></br>
             <InternHint>
               <InternHintStrong>
-                참고화면
+
               </InternHintStrong>
               <br></br>
               <HintImage src={intern_sheet_photo} alt="힌트 이미지" />

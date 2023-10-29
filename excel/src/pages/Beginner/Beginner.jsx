@@ -126,7 +126,6 @@ export default function Beginer() {
             <br></br>
             <BeginerHint>
               <BeginerHintStrong>
-                참고화면
               </BeginerHintStrong>
               <br></br>
               <HintImage src={beginer_sheet_photo} alt="힌트 이미지" />

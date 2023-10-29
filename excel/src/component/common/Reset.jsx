@@ -47,13 +47,13 @@ export default function Reset() {
 const Button = styled.button`
   font-size: 15px;
   width: 180px;
-  background-color: black;
-  color: white;
+  background-color: #d7cec7;
+  color: #000;
   font-family: 'GmarketSansMedium';
   padding: 2px;
   border-radius: 4px;
   &:hover {
-    background-color: #4B504B;
-    color: #fff;
+    background-color: #998066;
+    color: white;
   }
 `

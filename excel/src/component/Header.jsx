@@ -10,9 +10,9 @@ export default function Header() {
 const HeaderTitle = styled.h1`
   color: white;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 4rem;
   font-family: 'GmarketSansMedium';
   font-size: 3.7rem;
   font-weight: 700;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 `

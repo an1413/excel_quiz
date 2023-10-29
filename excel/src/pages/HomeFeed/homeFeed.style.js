@@ -5,8 +5,9 @@ export const LevelContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.3rem;
   margin: 0 auto;
+   
 `
 
 export const LevelImg = styled.div`
@@ -34,4 +35,5 @@ export const LevelButton = styled.button`
 export const Img = styled.img`
   width: 240px;
   height: 240px;
+  margin-bottom: 1rem;
 `;

@@ -35,14 +35,14 @@ export const AnswerInput = styled.input`
 export const AnswerButton = styled.button`
   font-size: 15px;
   font-family: 'GmarketSansMedium';
-  background-color: black;
-  color: white;
+  background-color: #d7cec7;
+  color: #000;
   width: 5rem;
   height: 40px;
   border-radius: 4px;
   &:hover {
-    background-color: #4B504B;
-    color: #fff;
+    background-color: #998066;
+    color: white;
   }
 `;
 
@@ -61,10 +61,9 @@ export const BeginerHint = styled.div`
 `;
 
 export const HintImage = styled.img`
-  text-align: center;
   width: 140%;
   height: 100%;
-  margin-left: 6.5rem;
+  margin-left: 9.5rem;
 `;
 
 export const ButtonWrapper = styled.div`
