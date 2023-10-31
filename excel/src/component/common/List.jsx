@@ -238,6 +238,211 @@ const yourData = [
     Func_Explain: '단어 사이에 있는 한칸의 공백을 제외하고 텍스트의 공백을 모두 삭제함',
     Func_ex: '=TRIM(“KOREA 2009”)                결과: KOREA 2009',
   },
+  {
+    Func_Name: '=REPLACE(텍스트1,시작 위치,문자수,텍스트2)',
+    Func_Explain: '텍스트1의 시작 위치로부터 해당 문자수만큼 텍스트2로 바꿈',
+    Func_ex: '텍스트',
+  },
+  {
+    Func_Name: '=SUBSTITUTE(“텍스트1”,”텍스트2”,”텍스트2”)',
+    Func_Explain: '텍스트1에서 텍스트 2를 텍스트 3으로 바꿈',
+    Func_ex: '텍스트',
+  },
+  {
+    Func_Name: '=VALUE(텍스트)',
+    Func_Explain: '텍스트를 숫자로 변환함',
+    Func_ex: '텍스트',
+  },
+  {
+    Func_Name: '=TEXT(숫자 값,표시 형식)',
+    Func_Explain: '숫자 값을 표시 형식을 지정하여 텍스트로 변환함',
+    Func_ex: '텍스트',
+  },
+  {
+    Func_Name: '=IF(조건식,값1,값2)',
+    Func_Explain: '조건식이 참이면 값1을 표시, 거짓이면 값2를 표시',
+    Func_ex: '논리',
+  },
+  {
+    Func_Name: '=AND(조건1,조건2,….)',
+    Func_Explain: '모든 조건이 참이면 TRUE,나머지는 TRUE를 표시',
+    Func_ex: '논리',
+  },
+  {
+    Func_Name: '=OR(조건1,조건2,..)',
+    Func_Explain: '모든 조건이 거짓이면 FALSE, 나머지는 TRUE를 표시',
+    Func_ex: '논리',
+  },
+  {
+    Func_Name: '=TRUE()',
+    Func_Explain: '논리값을 TRUE로 표시',
+    Func_ex: '논리',
+  },
+  {
+    Func_Name: '=FALSE()',
+    Func_Explain: '논리값을 FALSE로 표시',
+    Func_ex: '논리',
+  },
+  {
+    Func_Name: '=NOT(논리식)',
+    Func_Explain: '논리식의 결과를 역으로 표시',
+    Func_ex: '논리',
+  },
+  {
+    Func_Name: '=IFERROR(수식,값)',
+    Func_Explain: '수식에서 오류가 발생할 경우 지정한 값을 반환하고, 그렇지 않으면 수식 결과를 반환함',
+    Func_ex: '논리',
+  },
+  {
+    Func_Name: '=ISBLANK(검사대상)',
+    Func_Explain: '검사 대상 셀이 공백 셀인지를 조사',
+    Func_ex: '정보',
+  },
+  {
+    Func_Name: '=ISERROR(검사대상)',
+    Func_Explain: '검사 대상에 에러 값인지를 조사',
+    Func_ex: '정보',
+  },
+  {
+    Func_Name: '=CELL(정보 유형 텍스트,[참조할 주소])',
+    Func_Explain: '검사범위에서 검색값을 찾아 대응범위에서 같은 위치에 있는값을 표시',
+    Func_ex: '찾기 및 참조',
+  },
+  {
+    Func_Name: '=VLOOKUP(검색값,범위,열번호,[검색 유형])',
+    Func_Explain: '범위의 첫 열에서 검색값을 찾아, 지정한 열번호에서 같은 행에 있는 값을 표시',
+    Func_ex: '찾기 및 참조',
+  },
+  {
+    Func_Name: '=HLOOKUP(검색값,범위,행번호,[검색 유형])',
+    Func_Explain: '범위의 첫 행에서 검색값을 찾아,지정한 행번호에서 같은 열에 있는 값을 표시',
+    Func_ex: '찾기 및 참조',
+  },
+  {
+    Func_Name: '=ADDRESS(행번호,열번호,참조유형,주소형식,참조시트)',
+    Func_Explain: '입력한 열/행번호의 셀주소를 지정한 형식으로 반환함',
+    Func_ex: '찾기 및 참조',
+  },
+  {
+    Func_Name: '=AGGREGATE(사용할함수,집계방식,인수1,….)',
+    Func_Explain: '숨겨진 행 또는 오류를 제외하고 다양한 방식으로 데이터를 집계',
+    Func_ex: '수학',
+  },
+  {
+    Func_Name: '=CELLING(숫자,기준배수)',
+    Func_Explain: '특정 배수를 기준으로 올림된 수를 반환함',
+    Func_ex: '수학',
+  },
+  {
+    Func_Name: '=CHAR(코드번호)',
+    Func_Explain: '입력한 코드에 해당하는 문자를 반환함',
+    Func_ex: '텍스트',
+  },
+  {
+    Func_Name: '=COLUMN(셀)',
+    Func_Explain: '셀의 열 번호를 반환함',
+    Func_ex: '찾기 및 참조',
+  },
+  {
+    Func_Name: '=CONCAT(항목1,항목2,….)',
+    Func_Explain: '여러 개의 범위 또는 텍스트를 하나의 문자열로 결합함',
+    Func_ex: '텍스트',
+  },
+  {
+    Func_Name: '=CONCATENATE(텍스트1,…..)',
+    Func_Explain: '여러 개의 텍스트 문자열을 하나의 문자열로 연결함',
+    Func_ex: '텍스트',
+  },
+  {
+    Func_Name: '=CORREL(범위1,범위2)',
+    Func_Explain: '두 범위의 상관계수를 구함',
+    Func_ex: '통계',
+  },
+  {
+    Func_Name: '=COUPNUM(결산일,만기일,연간지급횟수,계산기준)',
+    Func_Explain: '결산일과 만기일 사이 총 이자 지급횟수를 구함',
+    Func_ex: '재무',
+  },
+  {
+    Func_Name: '=DATEVALUE(텍스트)',
+    Func_Explain: '텍스트 형태로 저장된 날짜를 날짜계산에 사용되는 일련번호로 변환',
+    Func_ex: '날짜 및 시간',
+  },
+  {
+    Func_Name: '=DB(자산취득가,잔존가치,내용연수,상각년도,첫해개월수)',
+    Func_Explain: '감가상각 방법 중 정률법을 이용해 감가상각 금액을 계산함',
+    Func_ex: '재무',
+  },
+  {
+    Func_Name: '=DCOUNT(표,필드,조건)',
+    Func_Explain: '표의 지정한 필드에서 조건을 만족하는 값의 평균을 계산',
+    Func_ex: '데이터베이스',
+  },
+  {
+    Func_Name: '=DDB(자산취득가,잔존가치,내용연수,상각연도,감가 배율)',
+    Func_Explain: '이중 체감법 또는 지정한 배율로 해당회기의 감가상각을 계산',
+    Func_ex: '재무',
+  },
+  {
+    Func_Name: '=EMONTH(시작일,개월수)',
+    Func_Explain: '시작일로부터 특정 개월수 이후의 마지막날을 반환하는 함수',
+    Func_ex: '날짜 및 시간',
+  },
+  {
+    Func_Name: '=EVEN(숫자)',
+    Func_Explain: '가장 가까운 짝수를 찾아 올림함',
+    Func_ex: '수학 및 삼각',
+  },
+  {
+    Func_Name: '=EXACT(텍스트1,텍스트2)',
+    Func_Explain: '두 텍스트의 정학한 일치여부를 대소문자까지 구분하여 확인',
+    Func_ex: '텍스트',
+  },
+  {
+    Func_Name: '=FILTER(배열,조건,결과없음반환)',
+    Func_Explain: '입력한 조건을 바탕으로 데이터를 필터링함',
+    Func_ex: '동적배열',
+  },
+  {
+    Func_Name: '=FIND(찾으려는문자,문자열,시작위치)',
+    Func_Explain: '찾으려는 문자가 문자열에서 몇번째위치하는지 순번 검색',
+    Func_ex: '텍스트',
+  },
+  {
+    Func_Name: '=FLOOR(숫자,기준배수)',
+    Func_Explain: '숫자의 배수중 기준이  되는 배수와 가장  가까운 내림된 값을 반환',
+    Func_ex: '수학 및 삼각',
+  },
+  {
+    Func_Name: '=FORECAST(예측할값,결과값범위,예측값범위)',
+    Func_Explain: '선형회귀법을 사용하여 기존 값으로 미래의 값을  예측하는 함수',
+    Func_ex: '통계',
+  },
+  {
+    Func_Name: '=GEOMANEAN(범위1,범위2,…)',
+    Func_Explain: '지정한 범위 내 값들의 기하평균을 계산함',
+    Func_ex: '통계',
+  },
+  {
+    Func_Name: '=HYPERLINK(경로,표시값)',
+    Func_Explain: '통합문서나 외부 인터넷 페이지를 열 수 있는 바로가기 링크 생성함',
+    Func_ex: '찾기 및 참조',
+  },
+  {
+    Func_Name: '=SEARCH(찾을문자,문자열,시작지점)',
+    Func_Explain: '문자열에서 특정문자의 시작 위치를 찾음',
+    Func_ex: '텍스트',
+  },
+  {
+    Func_Name: '=SIGN(숫자)',
+    Func_Explain: '입력한 수의 부호를 결정함',
+    Func_ex: '수학 및 삼각',
+  },
+  {
+    Func_Name: '=STEYX(Y축범위,X축범위)',
+    Func_Explain: '차트의 X값에 대한 Y값의 표준오차를 계산',
+    Func_ex: '통계',
+  },
 ];
 
 export default function List({ searchValue }) {
