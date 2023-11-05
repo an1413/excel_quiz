@@ -22,6 +22,7 @@ function CollapsibleExample() {
                 시험보기
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="/function">함수별 문제</Nav.Link>
             <Nav.Link href="/dictionary">함수사전</Nav.Link>
           </Nav>
           <Nav>
