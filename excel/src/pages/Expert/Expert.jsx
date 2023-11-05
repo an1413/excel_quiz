@@ -7,6 +7,8 @@ import Reset from '../../component/common/Reset';
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import Hint from '../../component/common/Hint';
+import NextProb from '../../component/common/NextProb';
+import PrevProb from '../../component/common/PrevProb';
 
 export default function Expert() {
   const navigate = useNavigate();
@@ -20,6 +22,33 @@ export default function Expert() {
   const linkFeed = () => {
     navigate("/");
   }
+
+  const handleNextStage = () => {
+    if (stage_expert === 20) {
+      Swal.fire({
+        title: '마지막 문제입니다.',
+        icon: 'error',
+        timer: 1500,
+      }).then(() => {
+      });
+    } else {
+      setStage_expert(stage_expert + 1);
+    }
+  };
+
+  const handlePrevStage = () => {
+    if (stage_expert === 1) {
+      Swal.fire({
+        title: '첫번째 문제입니다.',
+        icon: 'error',
+        timer: 1500,
+      }).then(() => {
+        // linkFeed();
+      });
+    } else {
+      setStage_expert(stage_expert - 1);
+    }
+  };
 
   // stage_expert 값을 로컬 스토리지에 저장하는 함수
   const saveStageExpertToLocalStorage = (value) => {
@@ -100,6 +129,8 @@ export default function Expert() {
             <ButtonWrapper>
               <Back />
               <Reset/>
+              <PrevProb onPrev={handlePrevStage} />
+              <NextProb onNext={handleNextStage} />
               <Hint hint={expert_hint}/>
             </ButtonWrapper>
             <QuestionH1>고급 {stage_expert}번 문제</QuestionH1>

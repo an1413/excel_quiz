@@ -7,6 +7,8 @@ import Reset from '../../component/common/Reset';
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import Hint from '../../component/common/Hint';
+import NextProb from '../../component/common/NextProb';
+import PrevProb from '../../component/common/PrevProb';
 
 export default function Beginer() {
   const navigate = useNavigate();
@@ -79,6 +81,30 @@ export default function Beginer() {
     }
   };
 
+  const handlePrevStage = () => {
+    if (stage_beginer === 1) {
+      Swal.fire({
+        title: '첫번째 문제입니다.',
+        icon: 'error',
+        timer: 1500,
+      });
+    } else {
+      setStage_beginer(stage_beginer - 1);
+    }
+  };
+
+  const handleNextStage = () => {
+    if (stage_beginer === 20) {
+      Swal.fire({
+        title: '마지막 문제입니다.',
+        icon: 'error',
+        timer: 1500,
+      });
+    } else {
+      setStage_beginer(stage_beginer + 1);
+    }
+  };
+
   const beginer_Success = () => {
     if (stage_beginer === 20) {
     Swal.fire({
@@ -101,6 +127,8 @@ export default function Beginer() {
               <Back />
               <Reset/>
               <Hint hint={beginer_hint}/>
+              <PrevProb onPrev={handlePrevStage} /> 
+              <NextProb onNext={handleNextStage} />
             </ButtonWrapper>
             <QuestionH1>초급 {stage_beginer}번 문제</QuestionH1>
             <QuestionP>{beginer_question}</QuestionP>
@@ -125,7 +153,6 @@ export default function Beginer() {
             <br></br>
             <BeginerHint>
               <BeginerHintStrong>
-                참고화면
               </BeginerHintStrong>
               <br></br>
               <HintImage src={beginer_sheet_photo} alt="힌트 이미지" />
