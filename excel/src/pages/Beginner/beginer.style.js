@@ -53,15 +53,20 @@ export const BeginerHintStrong = styled.div`
 `
 
 export const BeginerHint = styled.div`
-  width: 300px;
+  width: 400px;
   height: 300px;
 `;
 
 export const HintImage = styled.img`
   text-align: center;
-  width: 140%;
-  height: 100%;
-  margin-left: 6.5rem;
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
