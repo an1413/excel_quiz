@@ -12,8 +12,6 @@ export default function NextProb({ onNext }) {
 
 const NextButton = styled.button`
   font-size: 15px;
-  background-color: #000;
-  color: #fff;
   font-family: 'GmarketSansMedium';
   width: 82px;
   border-radius: 4px;

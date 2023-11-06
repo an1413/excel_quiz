@@ -19,8 +19,6 @@ export default function Hint({hint}) {
 const Button = styled.button`
   font-size: 15px;
   width: 50px;
-  background-color: black;
-  color: white;
   font-family: 'GmarketSansMedium';
   padding: 2px;
   border-radius: 4px;

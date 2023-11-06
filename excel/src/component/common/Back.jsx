@@ -13,8 +13,6 @@ export default function Back() {
 
 const BackButton = styled.button`
   font-size: 15px;
-  background-color: #000;
-  color: #fff;
   font-family: 'GmarketSansMedium';
   width: 62px;
   border-radius: 4px;

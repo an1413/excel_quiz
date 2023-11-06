@@ -12,7 +12,7 @@ export default function HomeFeed() {
   const navigate = useNavigate();
 
   const linkNewbie = () => {
-    navigate("/beginner");
+    navigate("/beginer");
   }
 
   const linkIntern = () => {
