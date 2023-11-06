@@ -11,8 +11,8 @@ export default function Reset() {
   const stageReset = () => {
     if (location.pathname === '/intern') {
       thisLevel = 'intern';
-    } else if (location.pathname === '/beginner') {
-      thisLevel = 'beginner';
+    } else if (location.pathname === '/beginer') {
+      thisLevel = 'beginer';
     } else if (location.pathname === '/expert') {
       thisLevel = 'expert';
     } else {
@@ -45,8 +45,6 @@ export default function Reset() {
 const Button = styled.button`
   font-size: 15px;
   width: 180px;
-  background-color: black;
-  color: white;
   padding: 2px;
   border-radius: 4px;
   font-family: 'GmarketSansMedium';

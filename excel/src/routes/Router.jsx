@@ -8,13 +8,15 @@ import {
 import HomeFeed from "../pages/HomeFeed/HomeFeed";
 import Expert from "../pages/Expert/Expert";
 import Dictionary from "../pages/Dictionary/Dictionary";
-import Beginner from "../pages/Beginner/Beginner";
+import Beginer from "../pages/Beginer/Beginer";
 import Intern from "../pages/Intern/Intern";
 import Completion from '../pages/Completion/Completion';
-import TestRandom from '../pages/TestRandom/TestRandom';
+import Test from '../pages/Test/Test';
 import UserAccount from '../pages/Signup/userAccount/UserAccount';
 import ProfileSettingUI from '../pages/Signup/profileSetting/ProfileSetting.presenter';
 import LoginPresenter from '../pages/Login/login.presenter';
+import Score from '../component/Score';
+import FunctionKnow from '../pages/FunctionKnow/FunctionKnow';
 
 export default function Router() {
   return (
@@ -27,9 +29,9 @@ export default function Router() {
           <Route path='profileSetting/' element={<ProfileSettingUI/>}/>
           </Route>
         <Route path="/dictionary" element={<Dictionary/>}/>
-        <Route path="/beginner/*" element={<Outlet/>}>
-          <Route path="" element={<Beginner />} />
-          <Route path='completion/' element={<Completion level="Beginner"/> }/>
+        <Route path="/beginer/*" element={<Outlet/>}>
+          <Route path="" element={<Beginer />} />
+          <Route path='completion/' element={<Completion level="Beginer"/> }/>
         </Route>
         <Route path="/intern/*" element={<Outlet/>}>
           <Route path="" element={<Intern />} />
@@ -39,7 +41,9 @@ export default function Router() {
           <Route path="" element={<Expert />} />
           <Route path='completion/' element={<Completion level="Expert"/>}/>
         </Route>
-        <Route path='/test/*' element={<TestRandom/>}/>
+        <Route path='/test/*' element={<Test/>}/>
+        <Route path='/score/*' element={<Score/>}/>
+        <Route path='/function/*' element={<FunctionKnow/>}/>
       </Routes>
     </BrowserRouter>
   )
