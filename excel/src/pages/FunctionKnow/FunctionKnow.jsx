@@ -1,7 +1,7 @@
 import React from 'react'
 import { CardTitle, CardWrapper, ListGroupItem, ListGroup } from './functionKnow.style';
 import "../../db/function.json";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import FunctionProblem from '../FunctionProblem/FunctionProblem'; // 추가된 부분
 
 const data = [
@@ -184,7 +184,8 @@ const data = [
 
 export default function FunctionKnow() {
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const isFunctionProblemRoute = location.pathname === '/function-problem';
   const handleFunctionClick = (functionName) => {
     // 클릭한 함수에 대한 정보를 저장하고 Expert 컴포넌트로 이동
     localStorage.setItem('selectedFunctionData', JSON.stringify(data.find(item => item.function === functionName)));
@@ -203,7 +204,7 @@ export default function FunctionKnow() {
               </ListGroup>
           ))}
         </CardWrapper>
-      <FunctionProblem />
+      {isFunctionProblemRoute && <FunctionProblem />}
       </>
   );
 }
