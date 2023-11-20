@@ -14,7 +14,7 @@ function CollapsibleExample() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Question" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="/beginner">초급</NavDropdown.Item>
+              <NavDropdown.Item href="/beginer">초급</NavDropdown.Item>
               <NavDropdown.Item href="/intern">중급</NavDropdown.Item>
               <NavDropdown.Item href="/expert">고급</NavDropdown.Item>
               <NavDropdown.Divider />

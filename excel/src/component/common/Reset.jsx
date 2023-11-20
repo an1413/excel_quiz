@@ -34,6 +34,7 @@ export default function Reset() {
           localStorage.setItem(`stage_${thisLevel}`, '1');
           // 해당 레벨의 처음 문제로 이동
           navigate(`/${thisLevel}`);
+          window.location.reload();
         });
       }
     });

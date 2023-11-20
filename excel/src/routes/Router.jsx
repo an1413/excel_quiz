@@ -15,7 +15,6 @@ import Test from '../pages/Test/Test';
 import UserAccount from '../pages/Signup/userAccount/UserAccount';
 import ProfileSettingUI from '../pages/Signup/profileSetting/ProfileSetting.presenter';
 import LoginPresenter from '../pages/Login/login.presenter';
-import Score from '../component/Score';
 import FunctionKnow from '../pages/FunctionKnow/FunctionKnow';
 
 export default function Router() {
@@ -42,7 +41,6 @@ export default function Router() {
           <Route path='completion/' element={<Completion level="Expert"/>}/>
         </Route>
         <Route path='/test/*' element={<Test/>}/>
-        <Route path='/score/*' element={<Score/>}/>
         <Route path='/function/*' element={<FunctionKnow/>}/>
       </Routes>
     </BrowserRouter>
