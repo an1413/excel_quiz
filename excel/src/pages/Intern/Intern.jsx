@@ -151,8 +151,6 @@ function Intern() {
             </QuestionDiv>
             <div className='col col-sm-12 col-md-6 col-lg-6'>
               <div>
-                {/* <InternAnswer>
-                </InternAnswer> */}
               </div>
               <br></br>
               <InternHint>

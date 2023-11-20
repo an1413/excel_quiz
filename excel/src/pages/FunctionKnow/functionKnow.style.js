@@ -1,38 +1,3 @@
-// import styled from 'styled-components';
-
-// export const CardWrapper = styled.div`
-//   margin: 2rem auto;
-//   width: 1200px;
-//   display:flex;
-//   flex-wrap: wrap;
-// `;
-
-// export const CardTitle = styled.h1`
-//   display:block;
-// `
-
-// export const ListGroup = styled.div`
-//   /* display: flex; */
-//   margin-bottom: 1rem;
-// `
-
-// export const ListGroupItem = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 200px;
-//   height: 100px;
-//   padding: 1rem;
-//   border-radius: 1rem;
-//   background-color: #fff;
-//   &:hover {
-//     cursor: pointer;
-//     color: #ddd;
-//     background-color: green;
-//     scale: 1.05;
-//   }
-// `
-
 import styled from 'styled-components';
 
 export const CardWrapper = styled.div`

@@ -1,5 +1,3 @@
-// FunctionProblem.js
-
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import { ExpertWrapper, QuestionDiv, ExpertAnswer, ExpertHint, HintImage, QuestionH1, QuestionP, AnswerInput, AnswerButton, ExpertHintStrong, ButtonWrapper, AnswerForm } from '../Expert/expert.style';
@@ -74,11 +72,11 @@ export const FunctionProblem = () => {
           </QuestionDiv>
           <div className="col col-sm-12 col-md-6 col-lg-6">
             <div>
-              <ExpertAnswer>{/* 필요한 내용 추가 */}</ExpertAnswer>
+              <ExpertAnswer></ExpertAnswer>
             </div>
             <br />
             <ExpertHint>
-              <ExpertHintStrong>{/* 필요한 내용 추가 */}</ExpertHintStrong>
+              <ExpertHintStrong></ExpertHintStrong>
               <br />
               <HintImage src={selectedFunctionData.sheet_photo} alt="힌트 이미지" />
             </ExpertHint>

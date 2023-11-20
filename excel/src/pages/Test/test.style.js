@@ -61,9 +61,6 @@ export const HintImage = styled.img`
   text-align: center;
   width: 400px;
   height: 400px;
-  /* width: 140%;
-  height: 140%;
-  margin-left: 9.5rem; */
 `;
 
 export const ButtonWrapper = styled.div`
