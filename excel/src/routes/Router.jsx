@@ -16,6 +16,7 @@ import UserAccount from '../pages/Signup/userAccount/UserAccount';
 import ProfileSettingUI from '../pages/Signup/profileSetting/ProfileSetting.presenter';
 import LoginPresenter from '../pages/Login/login.presenter';
 import FunctionKnow from '../pages/FunctionKnow/FunctionKnow';
+import FunctionProblem from '../pages/FunctionProblem/FunctionProblem'; 
 
 export default function Router() {
   return (
@@ -42,6 +43,7 @@ export default function Router() {
         </Route>
         <Route path='/test/*' element={<Test/>}/>
         <Route path='/function/*' element={<FunctionKnow/>}/>
+        <Route path="/function-problem" element={<FunctionProblem />} />
       </Routes>
     </BrowserRouter>
   )
