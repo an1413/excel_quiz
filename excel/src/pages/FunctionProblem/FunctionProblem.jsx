@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
-import { ExpertWrapper, QuestionDiv, ExpertAnswer, ExpertHint, HintImage, QuestionH1, QuestionP, AnswerInput, AnswerButton, ExpertHintStrong, ButtonWrapper, AnswerForm } from '../Expert/expert.style';
+import { FuncProblemWrapper, QuestionDiv, FuncProblemAnswer, FuncProblemHint, HintImage, QuestionH1, QuestionP, AnswerInput, AnswerButton, FuncProblemHintStrong, ButtonWrapper, AnswerForm } from './funcProblem.style';
 import { useNavigate } from 'react-router-dom';
+import Back from '../../component/common/Back';
+import Hint from '../../component/common/Hint';
 
 export const FunctionProblem = () => {
   const navigate = useNavigate();
   const selectedFunctionData = JSON.parse(localStorage.getItem('selectedFunctionData'));
   const [inputValue, setInputValue] = useState('');
+  const function_sheet_photo = require(`../../img/sheet_photo/${selectedFunctionData.sheet_photo}.png`);
 
   useEffect(() => {
     if (!selectedFunctionData) {
@@ -19,21 +22,24 @@ export const FunctionProblem = () => {
         navigate('/');
       });
     }
-  }, [selectedFunctionData, navigate]);
+  }, []);
 
   const handleButton = () => {
     // 정답 처리 로직
-    const expert_answer = selectedFunctionData.answer.toString();
+    const FuncProblem_answer = selectedFunctionData.answer.toString();
 
-    if (inputValue.replace(/\s+/g, '') === expert_answer) {
+    if (inputValue.replace(/\s+/g, '') === FuncProblem_answer) {
       // 정답과 입력값이 일치하면 성공 메시지 출력
       Swal.fire({
         title: '잘 하셨어요! 정답입니다.',
         icon: 'success',
-        timer: 2000,
+        timer: 2500,
       }).then(() => {
         // 다음 문제로 이동 또는 홈으로 이동 등을 수행
-        navigate('/');
+        navigate('/function');
+        setTimeout(() => {
+          window.location.reload();
+        }, 100);
       });
     } else {
       // 오답 메시지 출력
@@ -47,13 +53,13 @@ export const FunctionProblem = () => {
   };
 
   return (
-    <ExpertWrapper>
+    <FuncProblemWrapper>
       <div className="container">
         <div className="row">
           <QuestionDiv className="col col-sm-12 col-md-12 col-lg-6">
-            {/* 기존의 문제 출력 코드를 selectedFunctionData를 사용하여 수정 */}
             <ButtonWrapper>
-              {/* 필요한 버튼 및 컴포넌트 추가 */}
+              <Back />
+              <Hint hint={selectedFunctionData.hint}/>
             </ButtonWrapper>
             <QuestionH1>{selectedFunctionData.function} 함수 문제</QuestionH1>
             <QuestionP>{selectedFunctionData.question}</QuestionP>
@@ -72,18 +78,18 @@ export const FunctionProblem = () => {
           </QuestionDiv>
           <div className="col col-sm-12 col-md-6 col-lg-6">
             <div>
-              <ExpertAnswer></ExpertAnswer>
+              <FuncProblemAnswer></FuncProblemAnswer>
             </div>
             <br />
-            <ExpertHint>
-              <ExpertHintStrong></ExpertHintStrong>
+            <FuncProblemHint>
+              <FuncProblemHintStrong></FuncProblemHintStrong>
               <br />
-              <HintImage src={selectedFunctionData.sheet_photo} alt="힌트 이미지" />
-            </ExpertHint>
+              <HintImage src={function_sheet_photo} alt="힌트 이미지" />
+            </FuncProblemHint>
           </div>
         </div>
       </div>
-    </ExpertWrapper>
+    </FuncProblemWrapper>
   );
 };
 
