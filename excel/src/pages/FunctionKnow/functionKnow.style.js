@@ -13,6 +13,7 @@ export const CardTitle = styled.h1`
   text-align: center;
   width: 100%;
   margin-bottom: 1rem;
+  font-size: 28px;
 `;
 
 export const ListGroup = styled.div`
